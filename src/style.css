@@ -4,6 +4,7 @@
     font-style: normal;
     font-size: 47px;
     text-align: center;
+    padding-top: 15px;
 }
 
 body {
@@ -21,19 +22,30 @@ header {
     display: flex;
     align-items: center;
     padding: 0 20px;
-    box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
 .header-section {
     text-align: center;
 }
 
-.header-left, .header-right {
-    flex: 1; /* Equal space for left and right sections */
+.header-left {
+    flex: 1; 
+}
+
+.header-right {
+    flex: 1;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 100;
+    font-size: 40px;
 }
 
 .header-middle {
-    flex: 6; /* More space for the middle section */
+    flex: 6;
+    display: flex;
+    align-items: center;        
+    justify-content: center;    
+    gap: 10px;                  
 }
 
 .vertical-line {
@@ -41,5 +53,21 @@ header {
     height: 100%;
     background-color: black;
     align-self: center;
-    margin: 0 10px; /* Adjust spacing as needed */
+    margin: 0 10px; 
+}
+
+.tree-image {
+    width: 40px; 
+    height: auto;
+    margin-left: -10px; 
+}
+
+.children-image-container {
+    width: 700px;
+    height: 400px;
+    border-radius: 68px;
+    background-image: url('../assets/children.webp');
+    background-size: cover;
+    background-position: center;
+    margin: 40px auto 0 auto;
 }
