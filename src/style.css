@@ -38,6 +38,7 @@ header {
     vertical-align: middle;
     font-weight: 100;
     font-size: 40px;
+    padding-right: 20px;
 }
 
 .header-middle {
@@ -56,6 +57,12 @@ header {
     margin: 0 10px; 
 }
 
+.horizontal-line {
+    width: 96px;
+    height: 3px;
+    background-color: black;
+}
+
 .tree-image {
     width: 40px; 
     height: auto;
@@ -63,11 +70,49 @@ header {
 }
 
 .children-image-container {
-    width: 700px;
+    width: 1000px;
     height: 400px;
     border-radius: 68px;
     background-image: url('../assets/children.webp');
     background-size: cover;
     background-position: center;
     margin: 40px auto 0 auto;
+}
+
+.sidebar {
+    width: 90px;
+    height: 490px;
+    background-color: #FFFFFF;
+    margin-left: 60px;
+    margin-top: 40px;
+    border-radius: 30px;
+    border: 3px solid black;  
+    display: flex;
+    justify-content: center; 
+    align-items: center;    /* Center horizontally */
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Space between items */
+}
+
+.sidebar-text {
+    font-family: "Lilita One";
+    font-size: 20px;
+    text-align: center;
+}
+
+.flag-container {
+    position: fixed;  /* Fix the position relative to viewport */
+    top: 600px;      /* Adjust this value to position from top */
+    right: 80px;     /* Adjust this value to position from right */
+    z-index: 100;    /* Ensure flag stays above other content */
+}
+
+.flag-image {
+    width: 220px;    /* Adjust size as needed */
+    height: auto;
 }
