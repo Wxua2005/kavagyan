@@ -3,7 +3,7 @@
     font-weight: 400;
     font-style: normal;
     font-size: 47px;
-    text-align: center;
+    /* text-align: center; */
     padding-top: 15px;
 }
 
@@ -99,6 +99,9 @@ header {
     width: fit-content;
     margin: auto;
     text-align: left;
+    position: absolute;
+    right: 180px;
+    top: 130px;
 }
 
 .image-container img {
@@ -109,4 +112,30 @@ header {
 .image-text {
     display: block;
     margin-top: 10px;
+    flex-direction: column;
+}
+
+.paragraph {
+    display: flex;
+    flex-wrap: wrap;
+    width: 900px;
+}
+
+.achievements {
+    width: 350px;
+    height: 250px;
+    background-color: #E8E4C6;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lilita One";
+    gap: 10px;  /* Space between image and text */
+}
+
+.achievement-text {
+    text-align: center;
+    font-size: 35px;
+    color: #000;
 }
