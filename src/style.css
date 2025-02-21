@@ -14,6 +14,7 @@ body {
 }
 
 header {
+    padding-top: 400px;
     margin-top: -20px;
     background-color: #EDEDE9;
     height: 100px;
@@ -46,7 +47,7 @@ header {
 }
 
 .horizontal-line {
-    width: 96px;
+    width: 116px;
     height: 3px;
     background-color: black;
 }
@@ -61,7 +62,7 @@ header {
     position: absolute;
     top: 200px;  
     left: 60px;
-    width: 90px;
+    width: 110px;
     height: 490px;
     background-color: #FFFFFF;
     border-radius: 30px;
@@ -119,6 +120,11 @@ header {
     display: flex;
     flex-wrap: wrap;
     width: 900px;
+    /* height: 400px; */
+    background-color: #bdc1ac;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
 
 .achievements {
@@ -131,7 +137,8 @@ header {
     justify-content: center;
     align-items: center;
     font-family: "Lilita One";
-    gap: 10px;  /* Space between image and text */
+    gap: 10px;  
+    box-shadow: 1px 1px 5px 9px rgba(0,0,0,0.20);
 }
 
 .achievement-text {
