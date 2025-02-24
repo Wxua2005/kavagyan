@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Naren Medarametla">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Habibi&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+        <title>Maths Videos</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                background: white;
+            }
+
+            .button-class {
+                width: 130px; /* Reduced from 200px */
+                height: 40px; /* Added fixed height */
+                background-color: lightcoral;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                transform-origin: center;
+                border-radius: 12px;
+                border: 3px solid black;
+                box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.20);
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: Habibi;
+                font-size: 20px;
+            }
+
+            .button-class:hover {
+                transform: scale(1.1);
+            }
+
+            .chapter-container {
+                height: 62px;
+                padding: 0 20px;
+                background: #D9EFB8;
+                border-radius: 20px;
+                border: 3px black solid;
+                display: flex;
+                align-items: center;
+                margin: 10px 0; /* Reduced from 20px */
+                gap: 20px; /* Added gap between chapter number and name */
+            }
+
+            .chapter-title, .chapter-name {
+                color: black;
+                font-size: 32px;
+                font-family: Rubik Doodle Shadow;
+                font-weight: 400;
+            }
+
+            .video-grid {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+                padding: 20px;
+                margin-bottom: 30px; /* Added space between video grid and next chapter */
+            }
+
+            .video-box {
+                width: 250px; /* Reduced from 329px */
+                height: 180px; /* Reduced from 162px */
+                background: #808080; /* Changed to gray */
+                border-radius: 18px;
+                border: 4px solid black;
+                overflow: hidden; /* Add this to keep iframe within borders */
+            }
+
+            .video-box iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Header with Home button and user icon -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <div class="button-class">Home</div>
+            </a>
+            <img src="assets/user.png" alt="user" width="50" height="50">
+        </div>
+
+        <!-- Content container -->
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <!-- Chapter 1 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 1 :</div>
+                <div class="chapter-name">Knowing Our Numbers</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/j9jm3wFMBQs" 
+                        title="Mathematics Chapter 1 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/REUsK6IFAlk" 
+                        title="Mathematics Chapter 1 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/mX9zBBWvx3E" 
+                        title="Mathematics Chapter 1 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/508LjFuC1FI" 
+                        title="Mathematics Chapter 1 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 2 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 2 :</div>
+                <div class="chapter-name">Whole Numbers</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/7GE7UTZuXX8" 
+                        title="Mathematics Chapter 2 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/kQcE8QGDALA" 
+                        title="Mathematics Chapter 2 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/JUeZwIM5aVI" 
+                        title="Mathematics Chapter 2 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/nTyWB-nCvx8" 
+                        title="Mathematics Chapter 2 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 3 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 3 :</div>
+                <div class="chapter-name">Playing With Numbers</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/zY_uLUKWLjM" 
+                        title="Mathematics Chapter 3 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/KPt1End9yP4" 
+                        title="Mathematics Chapter 3 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/1C9kjHgrGAY" 
+                        title="Mathematics Chapter 3 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/e7Vyizp1MQk" 
+                        title="Mathematics Chapter 3 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 4 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 4 :</div>
+                <div class="chapter-name">Basic Geometrical Ideas</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/k6f89zlWKJs" 
+                        title="Mathematics Chapter 4 Part 1"
+                        allow="accel</div>erometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/kuGgN5Hd1Wc" 
+                        title="Mathematics Chapter 4 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/DUnU7hr-OMA" 
+                        title="Mathematics Chapter 4 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/9ODep52Qyqc" 
+                        title="Mathematics Chapter 4 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 5 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 5 :</div>
+                <div class="chapter-name">Understanding Elemental Shapes</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/KPVODrQPIBA" 
+                        title="Mathematics Chapter 5 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/5-sl-TfsKNo" 
+                        title="Mathematics Chapter 5 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/0CpxGmXnh0k" 
+                        title="Mathematics Chapter 5 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/gK8G6HaswGQ" 
+                        title="Mathematics Chapter 5 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 6 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 6 :</div>
+                <div class="chapter-name">Integers</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/fw1kyM0F00Y" 
+                        title="Mathematics Chapter 6 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/BVVrp7WkcCM" 
+                        title="Mathematics Chapter 6 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/wKo0OozohaI" 
+                        title="Mathematics Chapter 6 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/FJ36lj1s9os" 
+                        title="Mathematics Chapter 6 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 7 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 7 :</div>
+                <div class="chapter-name">Fractions</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/8BBz4Q4_Fu0" 
+                        title="Mathematics Chapter 7 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/ZuoRDkKWZPY" 
+                        title="Mathematics Chapter 7 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/M44FkZDoclU" 
+                        title="Mathematics Chapter 7 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/29fGhaJ_Gbc" 
+                        title="Mathematics Chapter 7 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 8 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 8 :</div>
+                <div class="chapter-name">Decimals</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/eEN4EOSUDOs" 
+                        title="Mathematics Chapter 8 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/xxC7EsRXC6o" 
+                        title="Mathematics Chapter 8 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/218f62FQGmo" 
+                        title="Mathematics Chapter 8 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/7ap_qVv-rhY" 
+                        title="Mathematics Chapter 8 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 9 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 9 :</div>
+                <div class="chapter-name">Data Handling</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/SSkFKv10EEw" 
+                        title="Mathematics Chapter 9 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/4iOX2zuyYnA" 
+                        title="Mathematics Chapter 9 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/qHxKJB11Ko0" 
+                        title="Mathematics Chapter 9 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Wch5h3RiIiY" 
+                        title="Mathematics Chapter 9 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 10 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 10 :</div>
+                <div class="chapter-name">Mensuration</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/7uEiK4thQ6Q" 
+                        title="Mathematics Chapter 10 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/Ubga7o5qgdU" 
+                        title="Mathematics Chapter 10 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/0wob4VIFNw0" 
+                        title="Mathematics Chapter 10 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/0kRuFlWC6iA" 
+                        title="Mathematics Chapter 10 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 11 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 11 :</div>
+                <div class="chapter-name">Algebra</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/oFA1lZiESx8" 
+                        title="Mathematics Chapter 11 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/YzO7z85pPQI" 
+                        title="Mathematics Chapter 11 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/BS8SJucP3Qc" 
+                        title="Mathematics Chapter 11 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/oOWZXPRYTXM" 
+                        title="Mathematics Chapter 11 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 12 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 12 :</div>
+                <div class="chapter-name">Ratio and Proportion</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/j_B29tjZlw8" 
+                        title="Mathematics Chapter 12 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/ykoya2Ty9CM" 
+                        title="Mathematics Chapter 12 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/mexZZUUBa1o" 
+                        title="Mathematics Chapter 12 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/3sVi2JhHvWM" 
+                        title="Mathematics Chapter 12 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 13 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 13 :</div>
+                <div class="chapter-name">Introduction to Symmetry</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dAqDwuHOi4g" 
+                        title="Mathematics Chapter 13 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/MHHPoV2eykw" 
+                        title="Mathematics Chapter 13 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/T_F7rYxGooM" 
+                        title="Mathematics Chapter 13 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/YuOIrrxFJL4" 
+                        title="Mathematics Chapter 13 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chapter 14 -->
+            <div class="chapter-container">
+                <div class="chapter-title">Chapter 14 :</div>
+                <div class="chapter-name">Practical Geometry</div>
+            </div>
+            <div class="video-grid">
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/zaPdxvzhzLc" 
+                        title="Mathematics Chapter 14 Part 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/BC-RcxPwY8E" 
+                        title="Mathematics Chapter 14 Part 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/S-g5pFQT8mg" 
+                        title="Mathematics Chapter 14 Part 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-box">
+                    <iframe 
+                        src="https://www.youtube.com/embed/mnFwAJ_TPeY" 
+                        title="Mathematics Chapter 14 Part 4"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

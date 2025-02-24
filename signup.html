@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Kavagyan</title>
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="auth.js"></script>
+</head>
+<body style="background-color: #d6dbcf; font-family: 'Poppins', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px 0;">
+
+    <div style="width: 400px; background: white; padding: 30px 50px; border-radius: 10px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); text-align: center;">
+        <h2 style="color: #004d00; font-size: 24px; font-weight: 600; margin-bottom: 15px;">CREATE AN ACCOUNT</h2>
+
+        <form onsubmit="handleSignup(event)" style="text-align: left;" enctype="multipart/form-data">
+            <label for="full-name" style="font-weight: 500; font-size: 14px;">Full Name</label>
+            <input type="text" id="full-name" name="full-name" required
+                style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+            
+            <label for="email" style="font-weight: 500; font-size: 14px;">Email</label>
+            <input type="email" id="email" name="email" required
+                style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+            
+            <label for="phone" style="font-weight: 500; font-size: 14px;">Phone Number</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit number" required
+                style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+
+            <label for="dob" style="font-weight: 500; font-size: 14px;">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required
+                style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+
+            <label for="grade" style="font-weight: 500; font-size: 14px;">Grade</label>
+            <select id="grade" name="grade" required
+                style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+                <option value="">Select Grade</option>
+                <option value="6">6th Grade</option>
+                <option value="7">7th Grade</option>
+                <option value="8">8th Grade</option>
+                <option value="9">9th Grade</option>
+                <option value="10">10th Grade</option>
+                <option value="10">11th Grade</option>
+                <option value="10">12th Grade</option>
+                <option value="10">JEE</option>
+                <option value="10">NEET</option>
+            </select>
+
+            <label for="institution" style="font-weight: 500; font-size: 14px;">Institution Name</label>
+            <input type="text" id="institution" name="institution" required
+                style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+
+            <label for="profile-photo" style="font-weight: 500; font-size: 14px;">Profile Photo</label>
+            <input type="file" id="profile-photo" name="profile-photo" accept="image/*" required
+                style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+
+            <label for="username" style="font-weight: 500; font-size: 14px;">Username</label>
+            <input type="text" id="username" name="username" required
+                style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+            
+            <label for="password" style="font-weight: 500; font-size: 14px;">Password</label>
+            <input type="password" id="password" name="password" required
+                style="width: 100%; padding: 12px; margin: 5px 0 20px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+
+            <button type="submit" 
+                style="width: 100%; background-color: #004d00; color: white; padding: 12px; border: none; border-radius: 5px; font-size: 16px; font-weight: 500; cursor: pointer; transition: 0.3s;">
+                Sign Up
+            </button>
+
+            <p style="margin-top: 15px; font-size: 14px;">Already have an account? 
+                <a href="login.html" style="color: #007BFF; font-weight: 500; text-decoration: none;">Login</a>
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>
