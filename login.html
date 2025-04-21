@@ -6,29 +6,117 @@
     <title>Login - Kavagyan</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Habibi&display=swap" rel="stylesheet">
     <script src="auth.js"></script>
+    <style>
+        body {
+            background-color: #fff4bd;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .login-container {
+            width: 380px;
+            background: #fff3e8;
+            padding: 30px 50px;
+            border-radius: 15px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            border: 3px solid black;
+        }
+        
+        h2 {
+            color: #000;
+            font-size: 32px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-family: 'Rubik Doodle Shadow', cursive;
+        }
+        
+        label {
+            font-weight: 500;
+            font-size: 16px;
+            font-family: 'Habibi', serif;
+            color: #333;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            outline: none;
+            transition: 0.3s;
+            background-color: #fff;
+        }
+        
+        input:focus {
+            border-color: lightcoral;
+            box-shadow: 0 0 5px rgba(240, 128, 128, 0.5);
+        }
+        
+        button {
+            width: 100%;
+            background-color: lightcoral;
+            color: black;
+            padding: 12px;
+            border: 3px solid black;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Habibi', serif;
+            margin-top: 10px;
+            box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.2);
+        }
+        
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+        }
+        
+        p {
+            margin-top: 20px;
+            font-size: 16px;
+            font-family: 'Habibi', serif;
+        }
+        
+        a {
+            color: lightcoral;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body style="background-color: #d6dbcf; font-family: 'Poppins', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+<body>
 
-    <div style="width: 380px; background: white; padding: 30px 50px; border-radius: 10px; box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); text-align: center;">
-        <h2 style="color: #004d00; font-size: 24px; font-weight: 600; margin-bottom: 15px;">LOGIN TO KAVAGYAN</h2>
+    <div class="login-container">
+        <h2>Login to Kavagyan</h2>
 
         <form onsubmit="handleLogin(event)" style="text-align: left;">
-            <label for="username" style="font-weight: 500; font-size: 14px;">Username</label>
-            <input type="text" id="username" name="username" required
-                style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
             
-            <label for="password" style="font-weight: 500; font-size: 14px;">Password</label>
-            <input type="password" id="password" name="password" required
-                style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: 0.3s;">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
 
-            <button type="submit" 
-                style="width: 100%; background-color: #004d00; color: white; padding: 12px; border: none; border-radius: 5px; font-size: 16px; font-weight: 500; cursor: pointer; transition: 0.3s;">
-                Login
-            </button>
+            <button type="submit">Login</button>
 
-            <p style="margin-top: 15px; font-size: 14px;">Don't have an account? 
-                <a href="signup.html" style="color: #007BFF; font-weight: 500; text-decoration: none;">Sign up</a>
+            <p>Don't have an account? 
+                <a href="signup.html">Sign up</a>
             </p>
         </form>
     </div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Practice Quiz - Kavagyan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Habibi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Math Practice</h1>
+            <div class="topic-selector">
+                <label for="topic">Select Topic:</label>
+                <select id="topic" onchange="changeTopic()">
+                    <option value="algebra">Algebra</option>
+                    <option value="geometry">Geometry</option>
+                    <option value="calculus">Calculus</option>
+                    <option value="statistics">Statistics</option>
+                </select>
+            </div>
+        </div>
+        <a href="maths.html" class="back-button">Back to Math</a>
+    </header>
+
+    <main class="quiz-container">
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        
+        <div class="score-display">
+            Score: <span id="score">0</span> / <span id="total">0</span>
+        </div>
+        
+        <div class="card-container">
+            <div class="card" id="current-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <h2 id="question-text">Loading question...</h2>
+                        <div id="question-options" class="options-container"></div>
+                        <div id="numerical-input" class="numerical-container">
+                            <input type="number" id="numerical-answer" placeholder="Enter your answer">
+                            <button id="submit-numerical">Submit</button>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div id="result-icon"></div>
+                        <h2 id="result-text">Checking answer...</h2>
+                        <p id="correct-answer"></p>
+                        <button id="next-question">Next Question</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="quiz-complete" class="quiz-complete">
+        <div class="complete-content">
+            <h2>Quiz Complete!</h2>
+            <div class="final-score">
+                <span id="final-score">0</span> / <span id="final-total">0</span>
+            </div>
+            <p id="score-message">Great job!</p>
+            
+            <div id="quiz-report" class="quiz-report"></div>
+        </div>
+    </div>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
