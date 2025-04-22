@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Naren Medarametla">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Habibi&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <title>Donate - Kavagyan</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-color: #D1D5C9;
+            margin: 0;
+            padding: 0;
+            font-family: 'Habibi', serif;
+        }
+        
+        .donate-header {
+            background-color: #fff3e8;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid black;
+        }
+        
+        .donate-header h1 {
+            font-family: 'Rubik Doodle Shadow', cursive;
+            font-size: 60px;
+            margin: 0;
+        }
+        
+        .donate-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .impact-section, .options-section, .testimonial-section, .faq-section {
+            background-color: #fff4bd;
+            border-radius: 15px;
+            border: 3px solid black;
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-family: 'Rubik Doodle Shadow', cursive;
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .content-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .donation-option {
+            background-color: #fff3e8;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .donation-option:hover {
+            transform: scale(1.05);
+        }
+        
+        .donation-option h3 {
+            font-family: 'Lilita One', sans-serif;
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: lightcoral;
+        }
+        
+        .amount {
+            font-family: 'Lilita One', sans-serif;
+            font-size: 28px;
+            margin: 15px 0;
+        }
+        
+        .impact-list {
+            text-align: left;
+            margin: 15px 0;
+        }
+        
+        .impact-list li {
+            margin-bottom: 10px;
+        }
+        
+        .donate-button {
+            display: inline-block;
+            background-color: lightcoral;
+            color: black;
+            font-family: 'Habibi', serif;
+            font-size: 18px;
+            padding: 10px 30px;
+            border: 3px solid black;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin-top: 15px;
+        }
+        
+        .donate-button:hover {
+            transform: scale(1.05);
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .impact-item {
+            background-color: #fff3e8;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .impact-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .impact-item h3 {
+            font-family: 'Lilita One', sans-serif;
+            margin: 10px 0;
+        }
+        
+        .testimonial {
+            background-color: #fff3e8;
+            border: 2px solid lightcoral;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-author {
+            text-align: right;
+            font-weight: bold;
+        }
+        
+        .accordion {
+            background-color: #fff3e8;
+            color: black;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            transition: 0.4s;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-family: 'Habibi', serif;
+            font-size: 18px;
+            border: 2px solid black;
+        }
+
+        .active, .accordion:hover {
+            background-color: #f7e8c5;
+        }
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+            margin-bottom: 10px;
+            border-radius: 0 0 8px 8px;
+            background-color: #f9f9f9;
+        }
+        
+        .panel p {
+            padding: 10px 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background-color: rgb(144, 144, 205);
+            padding: 10px 20px;
+            color: black;
+            text-decoration: none;
+            border-radius: 12px;
+            font-family: 'Habibi', serif;
+            border: 3px solid black;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header class="donate-header">
+        <h1>Support Our Mission</h1>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </header>
+    
+    <div class="donate-container">
+        <div class="impact-section">
+            <h2 class="section-title">Your Impact</h2>
+            <p class="content-text">
+                Your generous donation helps us create high-quality educational content and make it accessible to students across India. We believe that education should be available to everyone, regardless of their geographic or economic circumstances.
+            </p>
+            <p class="content-text">
+                With your support, we can continue to grow our platform, develop new educational resources, and reach more students who need it most.
+            </p>
+            
+            <div class="impact-grid">
+                <div class="impact-item">
+                    <img src="assets/graduation-hat.png" alt="Education">
+                    <h3>Enable Education</h3>
+                    <p>Help us provide free educational resources to underprivileged students</p>
+                </div>
+                
+                <div class="impact-item">
+                    <img src="assets/guru.png" alt="Teacher">
+                    <h3>Support Teachers</h3>
+                    <p>Fund our efforts to recruit and train excellent educators</p>
+                </div>
+                
+                <div class="impact-item">
+                    <img src="assets/maths.png" alt="Content">
+                    <h3>Create Content</h3>
+                    <p>Enable us to develop more high-quality educational videos and quizzes</p>
+                </div>
+                
+                <div class="impact-item">
+                    <img src="assets/tree.png" alt="Growth">
+                    <h3>Foster Growth</h3>
+                    <p>Help us expand to reach more students in rural and underserved areas</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="options-section">
+            <h2 class="section-title">Ways to Donate</h2>
+            <p class="content-text">
+                Choose the donation option that works best for you. Every contribution, no matter the size, makes a difference in our mission to provide quality education to all.
+            </p>
+            
+            <div class="donation-options">
+                <div class="donation-option">
+                    <h3>Supporter</h3>
+                    <div class="amount">₹500</div>
+                    <div class="impact-list">
+                        <ul>
+                            <li>Helps create 1 educational video</li>
+                            <li>Supports 5 students for a month</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="donate-button">Donate ₹500</a>
+                </div>
+                
+                <div class="donation-option">
+                    <h3>Contributor</h3>
+                    <div class="amount">₹1000</div>
+                    <div class="impact-list">
+                        <ul>
+                            <li>Helps create 3 educational videos</li>
+                            <li>Supports 10 students for a month</li>
+                            <li>Enables development of 1 interactive quiz</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="donate-button">Donate ₹1000</a>
+                </div>
+                
+                <div class="donation-option">
+                    <h3>Champion</h3>
+                    <div class="amount">₹2500</div>
+                    <div class="impact-list">
+                        <ul>
+                            <li>Helps create 8 educational videos</li>
+                            <li>Supports 25 students for a month</li>
+                            <li>Enables development of 3 interactive quizzes</li>
+                            <li>Contributes to technology infrastructure</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="donate-button">Donate ₹2500</a>
+                </div>
+                
+                <div class="donation-option">
+                    <h3>Visionary</h3>
+                    <div class="amount">₹5000+</div>
+                    <div class="impact-list">
+                        <ul>
+                            <li>Helps create 20+ educational videos</li>
+                            <li>Supports 50+ students for a month</li>
+                            <li>Enables development of complete quiz sections</li>
+                            <li>Contributes to technology infrastructure</li>
+                            <li>Helps expand to new subject areas</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="donate-button">Donate ₹5000</a>
+                </div>
+                
+                <div class="donation-option">
+                    <h3>Monthly Supporter</h3>
+                    <div class="amount">₹300/month</div>
+                    <div class="impact-list">
+                        <ul>
+                            <li>Sustained support for our mission</li>
+                            <li>Regular updates on our progress</li>
+                            <li>Recognition on our website</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="donate-button">Subscribe</a>
+                </div>
+                
+                <div class="donation-option">
+                    <h3>Custom Amount</h3>
+                    <div class="amount">You Choose</div>
+                    <div class="impact-list">
+                        <p>Every donation makes a difference, no matter the amount. Choose what works for you.</p>
+                    </div>
+                    <a href="#" class="donate-button">Custom Donation</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="testimonial-section">
+            <h2 class="section-title">What Donors Say</h2>
+            
+            <div class="testimonial">
+                <p>"I've been supporting Kavagyan for over a year now. It's incredible to see how they're making quality education accessible to students who might not otherwise have these resources. The transparency in how they use donations is also something I greatly appreciate."</p>
+                <div class="testimonial-author">- Priya S., Monthly Supporter</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"As someone who struggled to access good educational resources in my small town growing up, I understand how important platforms like Kavagyan are. I'm proud to contribute to their mission of democratizing education across India."</p>
+                <div class="testimonial-author">- Rajesh K., Champion Donor</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"My company chose to partner with Kavagyan as part of our CSR initiative. Their focus on quality education, especially in STEM subjects, aligns perfectly with our values. We've seen tangible results from our support."</p>
+                <div class="testimonial-author">- Sundar M., Corporate Donor</div>
+            </div>
+        </div>
+        
+        <div class="faq-section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <button class="accordion">Is my donation tax-deductible?</button>
+            <div class="panel">
+                <p>Yes, all donations to Kavagyan Educational Foundation are tax-deductible under Section 80G of the Income Tax Act. You will receive a receipt for your donation that can be used for tax purposes.</p>
+            </div>
+            
+            <button class="accordion">How will my donation be used?</button>
+            <div class="panel">
+                <p>Your donation directly supports our educational mission. Approximately 70% goes to content creation and educator salaries, 20% to technology infrastructure and development, and 10% to administrative expenses. We provide detailed annual reports on our website showing how funds are allocated.</p>
+            </div>
+            
+            <button class="accordion">Can I donate in memory or honor of someone?</button>
+            <div class="panel">
+                <p>Absolutely! During the checkout process, you'll have the option to dedicate your donation in memory or honor of someone special. We can also send a notification to a specified email address informing them of your thoughtful gift.</p>
+            </div>
+            
+            <button class="accordion">Are there other ways to support besides monetary donations?</button>
+            <div class="panel">
+                <p>Yes! We welcome volunteers who can help with content creation, technical development, or outreach. If you're an educator or have expertise in a particular subject area, you can contribute your knowledge. Please contact us at volunteer@kavagyan.com to discuss opportunities.</p>
+            </div>
+            
+            <button class="accordion">Can I specify which subject area my donation supports?</button>
+            <div class="panel">
+                <p>Yes, you can designate your donation to support specific subject areas like Mathematics, Physics, Biology, or English. Just make a note during the donation process about your preference.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div style="width: auto; height: 200px; background-color: #f7e8c5; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;">
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 440px;">
+           <a href="https://www.linkedin.com/in/naren-medarametla-81a36628b/"><img src="assets/linkedin.png" alt="linkedin" width="70" height="70"></a>
+            <img src="assets/instagram.png" alt="instagram" width="120" height="120">
+            <img src="assets/facebook.png" alt="facebook" width="70" height="70">
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 180px; font-family: 'Lilita One'; font-size: 20px; background-color: #EDEDE9; padding-left: 128px; padding-right: 180px; padding-bottom: 20px; justify-content: center; padding-top: 20px;">
+            <a href="terms-of-service.html" style="text-decoration: none; color: black;">Terms of Service</a>
+            <a href="privacy-policy.html" style="text-decoration: none; color: black;">Privacy Policy</a>
+            <a href="#" style="text-decoration: none; color: black;">Contact Us</a>
+            <a href="#" style="text-decoration: none; color: black;">Help</a>
+            <a href="#" onclick="showFeedbackForm(); return false;" style="text-decoration: none; color: black;">Feedback</a>
+        </div>
+    </div>
+    
+    <script>
+        // Accordion functionality for FAQ section
+        const accordions = document.getElementsByClassName("accordion");
+        
+        for (let i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Naren Medarametla">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Habibi&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+        <title>Physics - Kavagyan</title>
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+                overflow-x: hidden;
+                background-color: #fff4bd; 
+            }
+            .button-class {
+                width: 200px;
+                background-color: lightcoral;
+                transition: all 0.3s ease;
+                cursor: pointer;
+                transform-origin: center;
+                border-radius: 12px;
+                border: 3px solid black;
+                box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.20);
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: Habibi;
+                font-size: 20px; 
+                gap: 30px;
+                flex-direction: column;
+            }
+
+            .button-class:hover {
+                transform: scale(1.1);
+            }
+        </style>
+        <script src="script.js"></script>
+        <script src="auth.js"></script>
+    </head>
+
+    <body>
+        <div style="display:flex; flex-direction: row; background-color: #fff3e8; width: 100%; height: 220px; gap: 80px; align-items: center; justify-content: center; padding-right:12px; margin-top: -20px; padding-bottom: 10px; border-bottom: 4px solid black;">
+            <div style="width: auto; height: auto; flex: 0.8; margin-left: 20px; font-family: Rubik Doodle Shadow; font-size: 65px; rotate: -34.08deg;">
+            Physics
+            </div>
+            <img src="assets/atom.png" alt="physics" width="200" height="200" style="flex: 0.0; padding-left: 30px;">
+            <div style="flex: 4; rotate: 8.85deg; margin-top: 60px; padding-right: 30px;">
+            <div style="display: flex; gap: 40px;">
+                <span style="font-size: 54px;">E=mc²</span>
+                <span style="font-size: 44px; padding-top: 10px;">F=ma</span>
+                <span style="font-size: 34px; padding-top: 20px;">V=IR</span>
+                <span style="font-size: 24px; padding-top: 30px;">PV=nRT</span>
+                <div style="display: flex; flex-direction: column; gap: 25px; rotate: -8.85deg; margin-left: 100px; position: relative; left: -10px; bottom: 60px;">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">
+                        <div style="width: 110px; height: 40px; background-color: rgb(144, 144, 205);" class="button-class">Back</div>
+                    </a>
+                    <a href="#" style="text-decoration: none; color: inherit;" onclick="redirectToLogin('physics-quiz.html'); return false;">
+                        <div style="width: 110px; height: 40px; background-color: rgb(144, 144, 205);" class="button-class">Practice</div>
+                    </a>
+                </div></div>
+            </div>
+            </div>
+        </div>
+        
+        <div style="background-color: #fff4bd; width: 100%; min-height: calc(100vh - 220px);">
+            <div style="text-align: center; margin-top: 30px; font-size: 24px; font-family: Rubik Doodle Shadow; font-size: 45px; padding-top: 30px;">
+                Choose your group!
+            </div>
+            <div style="display: flex; flex-direction: column; width: 1580px; height: 500px; background-color: #fff4bd; margin: 60px auto 0; gap: 100px;">
+                <div style="display: flex; flex-direction: row; width: 1490px; height: 40px; gap: 330px; justify-content: center;">
+                    <a href="physics-video-6th.html" style="text-decoration: none; color: inherit;"><div class="button-class">Class 6th</div></a>
+                    <a href="physics-video-7th.html" style="text-decoration: none; color: inherit;"><div class="button-class">Class 7th</div></a>
+                    <a href="physics-video-8th.html" style="text-decoration: none; color: inherit;"><div class="button-class">Class 8th</div></a>
+                </div>
+
+                <div style="display: flex; flex-direction: row; width: 1580px; height: 40px;">
+                    <div style="display: flex; flex-direction: row; width: 1490px; height: 40px; gap: 330px; justify-content: center;">
+                        <a href="physics-video-9th.html" style="text-decoration: none; color: inherit;"><div class="button-class">Class 9th</div></a>
+                        <a href="physics-video-10th.html" style="text-decoration: none; color: inherit;"><div class="button-class">Class 10th</div></a>
+                        <a href="physics-video-11th.html" style="text-decoration: none; color: inherit;"><div class="button-class">Class 11th</div></a>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: row; width: 1580px; height: 40px;">
+                    <div style="display: flex; flex-direction: row; width: 1490px; height: 40px; gap: 330px; justify-content: center;">
+                        <a href="physics-video-12th.html" style="text-decoration: none; color: inherit;"><div class="button-class">Class 12th</div></a>
+                        <div class="button-class">JEE</div>
+                        <div class="button-class">NEET</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <div style="position: fixed; bottom: 0; width: 100%; background-color: #fff3e8; border-top: 2px solid black;">
+        <marquee behavior="scroll" direction="left" scrollamount="5" style="font-family: Habibi; font-size: 20px; padding: 10px;">
+            Don't forget to Practice daily and get rewards!
+        </marquee>
+    </div>
+</html>

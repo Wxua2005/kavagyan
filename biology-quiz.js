@@ -1,199 +1,313 @@
+// Biology Quiz Data organized by topics
 const quizData = {
-    algebra: [
+    cellbiology: [
         {
-            question: "Solve for x: 2x + 5 = 15",
-            type: "numerical",
-            answer: 5,
-            explanation: "Subtract 5 from both sides: 2x = 10, then divide by 2: x = 5"
-        },
-        {
-            question: "Which of these is a quadratic equation?",
+            question: "Which organelle is known as the powerhouse of the cell?",
             type: "multiple-choice",
             options: [
-                "y = 3x + 2",
-                "y = x² + 3x + 2",
-                "y = 4/x",
-                "y = 2ˣ"
+                "Nucleus",
+                "Mitochondria",
+                "Golgi apparatus",
+                "Endoplasmic reticulum"
             ],
             correctIndex: 1,
-            explanation: "A quadratic equation contains x²"
+            explanation: "Mitochondria are called the powerhouse of the cell because they produce most of the cell's supply of ATP."
         },
         {
-            question: "Factorize: x² - 9",
+            question: "Which of these is NOT a component of the cell membrane?",
             type: "multiple-choice",
             options: [
-                "(x-3)(x+3)",
-                "(x-9)(x+1)",
-                "(x-4.5)(x-4.5)",
-                "This expression cannot be factorized"
-            ],
-            correctIndex: 0,
-            explanation: "x² - 9 = x² - 3² = (x-3)(x+3)"
-        },
-        {
-            question: "If 3x - 7 = 20, what is the value of x?",
-            type: "numerical",
-            answer: 9,
-            explanation: "3x - 7 = 20, so 3x = 27, and x = 9"
-        },
-        {
-            question: "Solve the inequality: 2x - 3 > 7",
-            type: "numerical",
-            answer: 5,
-            explanation: "2x - 3 > 7, so 2x > 10, and x > 5. The smallest integer value is 5."
-        }
-    ],
-    geometry: [
-        {
-            question: "What is the area of a circle with radius 5 units? (Use π = 3.14)",
-            type: "numerical",
-            answer: 78.5,
-            explanation: "Area = πr² = 3.14 × 5² = 3.14 × 25 = 78.5 square units"
-        },
-        {
-            question: "In a right triangle, if one angle is 30°, what is another angle?",
-            type: "multiple-choice",
-            options: [
-                "30°",
-                "45°",
-                "60°",
-                "90°"
+                "Phospholipids",
+                "Cholesterol",
+                "Proteins",
+                "DNA"
             ],
             correctIndex: 3,
-            explanation: "In a right triangle, one angle is 90°. The third angle is 60° (since angles sum to 180°)"
+            explanation: "DNA is found primarily in the nucleus, not in the cell membrane."
         },
         {
-            question: "What is the perimeter of a rectangle with length 8 units and width 5 units?",
-            type: "numerical",
-            answer: 26,
-            explanation: "Perimeter = 2(length + width) = 2(8 + 5) = 2(13) = 26 units"
-        },
-        {
-            question: "Which of these shapes has exactly 4 sides of equal length?",
+            question: "What is the primary function of lysosomes?",
             type: "multiple-choice",
             options: [
-                "Rectangle",
-                "Rhombus",
-                "Trapezoid",
-                "Pentagon"
+                "Protein synthesis",
+                "Cellular digestion",
+                "Energy production",
+                "Cell division"
             ],
             correctIndex: 1,
-            explanation: "A rhombus has 4 sides of equal length"
+            explanation: "Lysosomes contain digestive enzymes that break down waste materials and cellular debris."
         },
         {
-            question: "What is the volume of a cube with side length 4 units?",
+            question: "How many chromosomes are in a normal human somatic cell?",
             type: "numerical",
-            answer: 64,
-            explanation: "Volume = side³ = 4³ = 64 cubic units"
-        }
-    ],
-    calculus: [
-        {
-            question: "What is the derivative of f(x) = 3x² + 2x?",
-            type: "multiple-choice",
-            options: [
-                "f'(x) = 3x + 2",
-                "f'(x) = 6x + 2",
-                "f'(x) = 6x² + 2",
-                "f'(x) = 6x²"
-            ],
-            correctIndex: 1,
-            explanation: "The derivative of x² is 2x, so f'(x) = 6x + 2"
+            answer: 46,
+            explanation: "Human somatic cells contain 46 chromosomes (23 pairs)."
         },
         {
-            question: "What is the integral of f(x) = 2x?",
+            question: "Which cell organelle is responsible for protein synthesis?",
             type: "multiple-choice",
             options: [
-                "F(x) = x² + C",
-                "F(x) = 2x² + C",
-                "F(x) = x² + 2 + C",
-                "F(x) = 2x³/3 + C"
+                "Ribosomes",
+                "Golgi apparatus",
+                "Lysosomes",
+                "Peroxisomes"
             ],
             correctIndex: 0,
-            explanation: "The integral of 2x is x² + C, where C is a constant"
-        },
-        {
-            question: "If f'(x) = 3x² and f(0) = 5, what is f(2)?",
-            type: "numerical",
-            answer: 13,
-            explanation: "f(x) = x³ + 5, so f(2) = 2³ + 5 = 8 + 5 = 13"
-        },
-        {
-            question: "What is the limit of (x² - 1)/(x - 1) as x approaches 1?",
-            type: "numerical",
-            answer: 2,
-            explanation: "Using L'Hôpital's rule or factoring: lim (x+1)(x-1)/(x-1) = lim(x+1) = 2"
-        },
-        {
-            question: "What is the second derivative of f(x) = x³ - 2x² + 3x?",
-            type: "multiple-choice",
-            options: [
-                "f''(x) = 6x - 4",
-                "f''(x) = 6x - 2",
-                "f''(x) = 6x - 4x + 3",
-                "f''(x) = 6"
-            ],
-            correctIndex: 0,
-            explanation: "f'(x) = 3x² - 4x + 3, and f''(x) = 6x - 4"
+            explanation: "Ribosomes are the cell structures where proteins are synthesized."
         }
     ],
-    statistics: [
+    genetics: [
         {
-            question: "What is the mean of the numbers 3, 7, 8, 10, 12?",
-            type: "numerical",
-            answer: 8,
-            explanation: "Mean = (3+7+8+10+12)/5 = 40/5 = 8"
-        },
-        {
-            question: "What is the median of the numbers 5, 8, 2, 9, 11?",
-            type: "numerical",
-            answer: 8,
-            explanation: "Sorted: 2, 5, 8, 9, 11. The middle value is 8."
-        },
-        {
-            question: "What is the probability of rolling a 6 on a standard die?",
+            question: "What is the process by which DNA makes a copy of itself called?",
             type: "multiple-choice",
             options: [
-                "1/12",
-                "1/6",
-                "1/3",
-                "1/2"
-            ],
-            correctIndex: 1,
-            explanation: "There is 1 favorable outcome out of 6 possible outcomes, so probability = 1/6"
-        },
-        {
-            question: "If the standard deviation of a dataset is 0, what does this indicate?",
-            type: "multiple-choice",
-            options: [
-                "The dataset contains only negative numbers",
-                "The dataset contains only positive numbers",
-                "All values in the dataset are the same",
-                "The dataset contains an equal number of positive and negative values"
+                "Translation",
+                "Transcription",
+                "Replication",
+                "Mutation"
             ],
             correctIndex: 2,
-            explanation: "If standard deviation is 0, all values in the dataset are identical"
+            explanation: "DNA replication is the process by which DNA makes a copy of itself during cell division."
         },
         {
-            question: "In a normal distribution, what percentage of data falls within one standard deviation of the mean?",
+            question: "In humans, which of these is a sex-linked trait?",
             type: "multiple-choice",
             options: [
-                "50%",
-                "68%",
-                "95%",
-                "99.7%"
+                "Eye color",
+                "Height",
+                "Red-green color blindness",
+                "Blood type"
+            ],
+            correctIndex: 2,
+            explanation: "Red-green color blindness is typically carried on the X chromosome, making it sex-linked."
+        },
+        {
+            question: "How many different types of nitrogenous bases are found in DNA?",
+            type: "numerical",
+            answer: 4,
+            explanation: "DNA contains four types of nitrogenous bases: Adenine, Guanine, Cytosine, and Thymine."
+        },
+        {
+            question: "Which of these is NOT a nucleotide base found in DNA?",
+            type: "multiple-choice",
+            options: [
+                "Adenine",
+                "Uracil",
+                "Thymine",
+                "Guanine"
             ],
             correctIndex: 1,
-            explanation: "In a normal distribution, approximately 68% of data falls within one standard deviation"
+            explanation: "Uracil is found in RNA, not DNA. DNA contains Adenine, Guanine, Cytosine, and Thymine."
+        },
+        {
+            question: "What is the term for different forms of a gene?",
+            type: "multiple-choice",
+            options: [
+                "Phenotypes",
+                "Genotypes",
+                "Alleles",
+                "Chromosomes"
+            ],
+            correctIndex: 2,
+            explanation: "Alleles are variant forms of the same gene that are found at the same place on a chromosome."
+        }
+    ],
+    human: [
+        {
+            question: "Which organ is responsible for filtering blood and removing waste products?",
+            type: "multiple-choice",
+            options: [
+                "Liver",
+                "Heart",
+                "Kidney",
+                "Lungs"
+            ],
+            correctIndex: 2,
+            explanation: "The kidneys filter blood to remove waste and excess substances, which are then excreted as urine."
+        },
+        {
+            question: "How many chambers does a human heart have?",
+            type: "numerical",
+            answer: 4,
+            explanation: "The human heart has four chambers: two atria (upper chambers) and two ventricles (lower chambers)."
+        },
+        {
+            question: "Which of the following is NOT a function of the liver?",
+            type: "multiple-choice",
+            options: [
+                "Detoxification of blood",
+                "Production of bile",
+                "Storage of glycogen",
+                "Production of insulin"
+            ],
+            correctIndex: 3,
+            explanation: "Insulin is produced by the pancreas, not the liver."
+        },
+        {
+            question: "What is the approximate pH of human blood?",
+            type: "numerical",
+            answer: 7.4,
+            explanation: "Normal human blood pH is tightly regulated and is slightly alkaline at about 7.35-7.45, with 7.4 being the average."
+        },
+        {
+            question: "Which system in the human body includes the thymus and spleen?",
+            type: "multiple-choice",
+            options: [
+                "Digestive system",
+                "Immune system",
+                "Endocrine system",
+                "Reproductive system"
+            ],
+            correctIndex: 1,
+            explanation: "The thymus and spleen are organs of the immune system."
+        }
+    ],
+    ecology: [
+        {
+            question: "What is the term for all the organisms of the same species in a specific area?",
+            type: "multiple-choice",
+            options: [
+                "Community",
+                "Ecosystem",
+                "Population",
+                "Biome"
+            ],
+            correctIndex: 2,
+            explanation: "A population consists of all the organisms of a single species living in a particular area."
+        },
+        {
+            question: "In a food chain, what organisms are primary consumers?",
+            type: "multiple-choice",
+            options: [
+                "Herbivores",
+                "Carnivores",
+                "Decomposers",
+                "Producers"
+            ],
+            correctIndex: 0,
+            explanation: "Primary consumers are herbivores that eat producers (plants)."
+        },
+        {
+            question: "What percentage of energy is typically transferred from one trophic level to the next?",
+            type: "numerical",
+            answer: 10,
+            explanation: "According to the 10% rule, only about 10% of energy is transferred from one trophic level to the next."
+        },
+        {
+            question: "Which of these is an example of a density-dependent limiting factor?",
+            type: "multiple-choice",
+            options: [
+                "Temperature",
+                "Floods",
+                "Disease",
+                "Drought"
+            ],
+            correctIndex: 2,
+            explanation: "Disease is a density-dependent factor because its spread often increases with population density."
+        },
+        {
+            question: "What is the term for the physical area where an organism lives?",
+            type: "multiple-choice",
+            options: [
+                "Niche",
+                "Habitat",
+                "Ecosystem",
+                "Biosphere"
+            ],
+            correctIndex: 1,
+            explanation: "Habitat refers to the physical environment where an organism lives."
+        }
+    ],
+    botany: [
+        {
+            question: "Which plant structure is responsible for water absorption?",
+            type: "multiple-choice",
+            options: [
+                "Leaves",
+                "Stems",
+                "Roots",
+                "Flowers"
+            ],
+            correctIndex: 2,
+            explanation: "Roots are the primary structures for water absorption in plants."
+        },
+        {
+            question: "What is the process by which plants make their own food called?",
+            type: "multiple-choice",
+            options: [
+                "Respiration",
+                "Photosynthesis",
+                "Transpiration",
+                "Fermentation"
+            ],
+            correctIndex: 1,
+            explanation: "Photosynthesis is the process by which plants use sunlight to synthesize food from carbon dioxide and water."
+        },
+        {
+            question: "How many cotyledons (seed leaves) do monocots have?",
+            type: "numerical",
+            answer: 1,
+            explanation: "Monocotyledonous plants have one cotyledon or seed leaf."
+        },
+        {
+            question: "Which of these is NOT a part of a flower's reproductive system?",
+            type: "multiple-choice",
+            options: [
+                "Stamen",
+                "Pistil",
+                "Petiole",
+                "Pollen"
+            ],
+            correctIndex: 2,
+            explanation: "Petiole is the stalk that connects a leaf to the stem; it is not part of the flower's reproductive system."
+        },
+        {
+            question: "What is the primary function of stomata in plants?",
+            type: "multiple-choice",
+            options: [
+                "Nutrient absorption",
+                "Gas exchange",
+                "Water storage",
+                "Food storage"
+            ],
+            correctIndex: 1,
+            explanation: "Stomata are tiny pores on plant leaves that allow for gas exchange, particularly the intake of carbon dioxide and release of oxygen."
         }
     ]
 };
 
-let currentTopic = 'algebra';
+let currentTopic = 'cellbiology';
 let currentQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
 let userAnswers = []; 
+
+function initQuiz() {
+    userAnswers = [];
+    
+    currentQuestions = [...quizData[currentTopic]];
+    
+    shuffleArray(currentQuestions);
+    
+    currentQuestionIndex = 0;
+    score = 0;
+    
+    updateScoreDisplay();
+    
+    showQuestion();
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function changeBiologyTopic() {
+    currentTopic = document.getElementById('topic').value;
+    initQuiz();
+}
 
 const topicSelector = document.getElementById('topic');
 const progressBar = document.querySelector('.progress');
@@ -213,30 +327,6 @@ const quizComplete = document.getElementById('quiz-complete');
 const finalScore = document.getElementById('final-score');
 const finalTotal = document.getElementById('final-total');
 const scoreMessage = document.getElementById('score-message');
-const retryButton = document.getElementById('retry-quiz');
-const changeTopicButton = document.getElementById('change-topic');
-
-function initQuiz() {
-    userAnswers = [];
-    
-    currentQuestions = [...quizData[currentTopic]];
-    
-    shuffleArray(currentQuestions);
-
-    currentQuestionIndex = 0;
-    score = 0;
-    
-    updateScoreDisplay();
-    
-    showQuestion();
-}
-
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
 
 function showQuestion() {
     const question = currentQuestions[currentQuestionIndex];
@@ -251,7 +341,6 @@ function showQuestion() {
         
         setTimeout(() => {
             updateQuestionContent(question);
-            
             card.classList.remove('slide-out-deck');
             card.classList.add('slide-in-deck');
             card.classList.add('show');
@@ -334,7 +423,7 @@ submitNumerical.addEventListener('click', () => {
         return;
     }
     
-    const isCorrect = Math.abs(userAnswer - question.answer) < 0.01; 
+    const isCorrect = Math.abs(userAnswer - question.answer) < 0.01;
     
     userAnswers.push({
         questionIndex: currentQuestionIndex,
@@ -404,61 +493,17 @@ function showQuizCompleteScreen() {
     
     const percentage = (score / currentQuestions.length) * 100;
     if (percentage >= 90) {
-        scoreMessage.textContent = "Outstanding work! You're a math genius!";
+        scoreMessage.textContent = "Outstanding work! You're a biology expert!";
     } else if (percentage >= 70) {
-        scoreMessage.textContent = "Great job! You have a solid understanding!";
+        scoreMessage.textContent = "Great job! You have a solid understanding of biology!";
     } else if (percentage >= 50) {
-        scoreMessage.textContent = "Good effort! Keep practicing!";
+        scoreMessage.textContent = "Good effort! Keep practicing your biology knowledge!";
     } else {
-        scoreMessage.textContent = "Keep studying! You'll get better with practice.";
+        scoreMessage.textContent = "Keep studying! You'll improve your biology understanding with practice.";
     }
-    
-    saveQuizStatistics(score, currentQuestions.length, currentTopic);
     
     generateQuizReport();
-    
     quizComplete.classList.add('show');
-}
-
-function saveQuizStatistics(score, total, topic) {
-    const currentUser = sessionStorage.getItem('currentUser');
-    if (!currentUser) return; 
-    
-    const userStats = JSON.parse(localStorage.getItem('userStats_' + currentUser) || '{}');
-    
-    userStats.quizAttempts = (userStats.quizAttempts || 0) + 1;
-    
-    const oldScores = userStats.totalScore || 0;
-    const oldAttempts = userStats.quizAttempts - 1;
-    const newTotalScore = oldScores + (score / total * 100);
-    userStats.totalScore = newTotalScore;
-    userStats.avgScore = Math.round(newTotalScore / userStats.quizAttempts);
-    
-    if (!userStats.subjectCounts) {
-        userStats.subjectCounts = {};
-    }
-    userStats.subjectCounts[topic] = (userStats.subjectCounts[topic] || 0) + 1;
-    
-    let maxCount = 0;
-    let favoriteSubject = '';
-    for (const subject in userStats.subjectCounts) {
-        if (userStats.subjectCounts[subject] > maxCount) {
-            maxCount = userStats.subjectCounts[subject];
-            favoriteSubject = subject;
-        }
-    }
-    
-    const subjectMap = {
-        'algebra': 'Mathematics',
-        'geometry': 'Mathematics',
-        'calculus': 'Mathematics',
-        'statistics': 'Mathematics'
-    };
-    
-    userStats.favoriteSubject = subjectMap[favoriteSubject] || 'Mathematics';
-    
-    localStorage.setItem('userStats_' + currentUser, JSON.stringify(userStats));
-    console.log('Quiz statistics saved for user:', currentUser);
 }
 
 function generateQuizReport() {
@@ -554,16 +599,6 @@ function showAnswersReview() {
         answersReview.style.display = 'none';
         reviewButton.textContent = 'Review Answers';
     }
-}
-
-changeTopicButton.addEventListener('click', () => {
-    quizComplete.classList.remove('show');
-    topicSelector.focus();
-});
-
-function changeTopic() {
-    currentTopic = topicSelector.value;
-    initQuiz();
 }
 
 function updateScoreDisplay() {

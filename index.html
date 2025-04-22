@@ -13,13 +13,169 @@
     <link rel="stylesheet" href="style.css">
     <title>Kavagyan</title>
     <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <style>
+        .language-dropdown {
+            position: absolute;
+            top: 75px;
+            left: 40px;
+            background-color: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            display: none;
+            z-index: 1000;
+            width: 180px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .language-option {
+            padding: 8px 10px;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+            font-family: 'Habibi', serif;
+        }
+        
+        .language-option:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .language-icon {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .language-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .timetable-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .timetable-dialog {
+            width: 500px;
+            background-color: #fff3e8;
+            border: 3px solid black;
+            border-radius: 15px;
+            box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            max-height: 90vh;
+        }
+        
+        .timetable-header {
+            padding: 15px 20px;
+            border-bottom: 2px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(144, 144, 205);
+        }
+        
+        .timetable-title {
+            font-family: 'Rubik Doodle Shadow', cursive;
+            font-size: 24px;
+            color: black;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: black;
+        }
+        
+        .timetable-body {
+            padding: 20px;
+            height: 300px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 15px;
+            font-family: 'Habibi', serif;
+        }
+        
+        .user-message {
+            align-self: flex-end;
+            background-color: lightcoral;
+            color: white;
+        }
+        
+        .bot-message {
+            align-self: flex-start;
+            background-color: #f0f0f0;
+            color: black;
+        }
+        
+        .timetable-footer {
+            padding: 15px;
+            border-top: 2px solid #ddd;
+            display: flex;
+        }
+        
+        .message-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            margin-right: 10px;
+            outline: none;
+        }
+        
+        .send-btn {
+            background-color: lightcoral;
+            color: white;
+            border: 2px solid #000;
+            border-radius: 10px;
+            padding: 0 15px;
+            font-family: 'Habibi', serif;
+            cursor: pointer;
+        }
+        
+        .timetable-result {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-family: 'Habibi', serif;
+        }
+    </style>
 </head>
 
 <body style="background-color: #D1D5C9;">
     <header>
         
         <div class="header-section header-left">
-            <img src="assets/Language.png" alt="Language" width="50em" style="position: absolute; top: 20px; left: 40px;">
+            <img src="assets/Language.png" alt="Language" width="50em" style="position: absolute; top: 20px; left: 40px;" class="language-icon" onclick="toggleLanguageDropdown()">
+            <div id="language-dropdown" class="language-dropdown">
+                <div class="language-option" onclick="changeLanguage('en')">English</div>
+                <div class="language-option" onclick="changeLanguage('ta')">Tamil (தமிழ்)</div>
+                <div class="language-option" onclick="changeLanguage('te')">Telugu (తెలుగు)</div>
+                <div class="language-option" onclick="changeLanguage('ml')">Malayalam (മലയാളം)</div>
+                <div class="language-option" onclick="changeLanguage('kn')">Kannada (ಕನ್ನಡ)</div>
+            </div>
             <a href="https://www.youtube.com/@wxua5859"><img src="assets/Youtube.png" alt="youtube" width="50em" style="position: absolute; left: 140px; top: 24px;"></a>
         </div>
 
@@ -59,6 +215,7 @@
 
             <img src="assets/children.webp" alt="Children;">
             <img src="assets/flag.png" alt="flag" style="position: absolute; left: 48em; top: 8em;">
+            <button id="timetable-planner-btn" style="position: absolute; left: 50em; top: 3em; background-color: #b9c3db; border: 3px solid black; border-radius: 12px; padding: 10px; font-family: 'Lilita One'; font-size: 16px; cursor: pointer; transition: transform 0.3s ease; width: 200px;">Time Table Planner</button>
 
             <span class="image-text lilita-one-regular" style="text-align: left; font-size: 80px;">Our Aim</span>
 
@@ -119,6 +276,177 @@
                 <a href="#" onclick="showFeedbackForm(); return false;" style="text-decoration: none; color: black;">Feedback</a>
             </div>
         </div>
+
+        <div id="timetable-modal" class="timetable-modal">
+            <div class="timetable-dialog">
+                <div class="timetable-header">
+                    <span class="timetable-title">Time Table Planner</span>
+                    <button class="close-btn" onclick="closeTimetableModal()">×</button>
+                </div>
+                <div class="timetable-body" id="chat-messages">
+                    <div class="message bot-message">
+                        Hello! I'm your Time Table Planner assistant. Tell me about your schedule, classes, and activities, and I'll help you organize a structured timetable.
+                    </div>
+                </div>
+                <div class="timetable-footer">
+                    <input type="text" id="message-input" class="message-input" placeholder="Type your message...">
+                    <button class="send-btn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
 </body>
+<script>
+    function toggleLanguageDropdown() {
+        const dropdown = document.getElementById('language-dropdown');
+        if (dropdown.style.display === 'block') {
+            dropdown.style.display = 'none';
+        } else {
+            dropdown.style.display = 'block';
+        }
+    }
+    
+    function changeLanguage(languageCode) {
+        localStorage.setItem('preferredLanguage', languageCode);
+        
+                document.getElementById('language-dropdown').style.display = 'none';
+    }
+    
+    function getLanguageName(code) {
+        const languages = {
+            'en': 'English',
+            'ta': 'Tamil (தமிழ்)',
+            'te': 'Telugu (తెలుగు)',
+            'ml': 'Malayalam (മലയാളം)',
+            'kn': 'Kannada (ಕನ್ನಡ)'
+        };
+        return languages[code] || 'Unknown';
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const preferredLanguage = localStorage.getItem('preferredLanguage');
+    });
+
+    const timetableModal = document.getElementById('timetable-modal');
+    const timetablePlannerBtn = document.getElementById('timetable-planner-btn');
+    const messageInput = document.getElementById('message-input');
+    const chatMessages = document.getElementById('chat-messages');
+
+    const TIMETABLE_API_URL = 'http://localhost:5005/api/timetable';
+    
+    timetablePlannerBtn.addEventListener('click', function() {
+        timetableModal.style.display = 'flex';
+    });
+
+    function closeTimetableModal() {
+        timetableModal.style.display = 'none';
+    }
+
+    function addMessageToChat(message, isUser = false) {
+        const messageElement = document.createElement('div');
+        messageElement.className = isUser ? 'message user-message' : 'message bot-message';
+        messageElement.textContent = message;
+        chatMessages.appendChild(messageElement);
+        
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function displayTimetable(response) {
+        const timetableElement = document.createElement('div');
+        timetableElement.className = 'timetable-result';
+        
+        if (!response || typeof response !== 'object') {
+            timetableElement.innerHTML = '<p>Sorry, I received an invalid response. Please try again.</p>';
+            chatMessages.appendChild(timetableElement);
+            return;
+        }
+        
+        let timetableHTML = `<h3>${response.message || 'Here\'s your timetable:'}</h3>`;
+        
+        if (response.timetable && typeof response.timetable === 'object') {
+            timetableHTML += '<div style="margin-top:10px;">';
+            try {
+                Object.entries(response.timetable).forEach(([time, activity]) => {
+                    timetableHTML += `<p><strong>${time}</strong>: ${activity}</p>`;
+                });
+            } catch (err) {
+                console.error('Error processing timetable:', err);
+                timetableHTML += '<p>Error displaying timetable details</p>';
+            }
+            timetableHTML += '</div>';
+        } else {
+            timetableHTML += '<p>No timetable details available</p>';
+        }
+        
+        if (response.suggestions && Array.isArray(response.suggestions) && response.suggestions.length > 0) {
+            timetableHTML += '<h4>Suggestions:</h4><ul>';
+            response.suggestions.forEach(suggestion => {
+                timetableHTML += `<li>${suggestion}</li>`;
+            });
+            timetableHTML += '</ul>';
+        }
+        
+        if (response.explanation) {
+            timetableHTML += `<p><em>${response.explanation}</em></p>`;
+        }
+        
+        timetableElement.innerHTML = timetableHTML;
+        chatMessages.appendChild(timetableElement);
+        
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function sendMessage() {
+        const messageText = messageInput.value.trim();
+        if (messageText) {
+            addMessageToChat(messageText, true);
+            messageInput.value = '';
+            
+            const loadingMessage = document.createElement('div');
+            loadingMessage.className = 'message bot-message';
+            loadingMessage.id = 'loading-message';
+            loadingMessage.textContent = 'Planning your timetable...';
+            chatMessages.appendChild(loadingMessage);
+            
+            fetch(TIMETABLE_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: messageText })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const loadingMsg = document.getElementById('loading-message');
+                if (loadingMsg) loadingMsg.remove();
+                
+                displayTimetable(data);
+            })
+            .catch(error => {
+                const loadingMsg = document.getElementById('loading-message');
+                if (loadingMsg) loadingMsg.remove();
+                
+                addMessageToChat('Sorry, there was an error processing your request. Please try again later.', false);
+                console.error('Error:', error);
+            });
+        }
+    }
+
+    messageInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    window.onclick = function(event) {
+        if (event.target == timetableModal) {
+            closeTimetableModal();
+        }
+    };
+</script>
  
 </html>

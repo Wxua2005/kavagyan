@@ -24,10 +24,8 @@ function showLoginForm() {
     `;
     document.body.insertAdjacentHTML('beforeend', form);
 
-    // Add event listener for form submission
     document.getElementById('loginForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        // Add your login logic here
         const loginId = document.getElementById('loginId').value;
         const password = document.getElementById('password').value;
         console.log('Login attempted with:', loginId, password);
@@ -36,7 +34,6 @@ function showLoginForm() {
 }
 
 function closeForm() {
-    // Remove the login form and overlay
     const form = document.querySelector('[style*="z-index: 1000"]');
     const overlay = document.querySelector('[style*="z-index: 999"]');
     if (form) form.remove();
@@ -73,7 +70,6 @@ function showFeedbackForm() {
     `;
     document.body.insertAdjacentHTML('beforeend', form);
 
-    // Add event listener for form submission
     document.getElementById('feedbackForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const email = document.getElementById('email').value;

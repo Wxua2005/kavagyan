@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Kavagyan</title>    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&family=Habibi&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One:wght@400;700&display=swap" rel="stylesheet">
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-color: #fff4bd;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .header {
+            background-color: #fff3e8;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid black;
+        }
+        
+        .header h1 {
+            color: #000;
+            font-family: 'Lilita One', cursive;
+            margin: 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background-color: rgb(144, 144, 205);
+            padding: 10px 20px;
+            color: black;
+            text-decoration: none;
+            border-radius: 12px;
+            font-family: 'Habibi', serif;
+            border: 3px solid black;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff3e8;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+            border: 3px solid black;
+        }
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid black;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 30px;
+            overflow: hidden;
+        }
+        
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .profile-info h2 {
+            font-family: 'Rubik Doodle Shadow', cursive;
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
+        
+        .profile-details {
+            font-family: 'Habibi', serif;
+            font-size: 18px;
+        }
+        
+        .profile-details p {
+            margin: 8px 0;
+        }
+        
+        .stats-container {
+            margin-top: 40px;
+        }
+        
+        .stats-header {
+            font-family: 'Lilita One', cursive;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #444;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid black;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-card h3 {
+            font-family: 'Habibi', serif;
+            margin-bottom: 15px;
+            font-size: 22px;
+            color: #333;
+        }
+        
+        .stat-value {
+            font-family: 'Lilita One', cursive;
+            font-size: 32px;
+            color: lightcoral;
+        }
+        
+        .stat-details {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #666;
+        }
+        
+        .subjects-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .subject-tag {
+            background-color: #ddd;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .subject-tag:hover {
+            transform: scale(1.05);
+        }
+        
+        .favorite {
+            background-color: lightcoral;
+            color: white;
+        }
+        
+        .active-subject {
+            background-color: #4a4a80;
+            color: white;
+            border: 2px solid black;
+        }
+        
+        .subject-details-container {
+            margin-top: 40px;
+            background-color: #fff3e8;
+            border-radius: 15px;
+            border: 3px solid black;
+            padding: 25px;
+        }
+        
+        .subject-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .subject-title {
+            font-family: 'Rubik Doodle Shadow', cursive;
+            font-size: 24px;
+        }
+        
+        .subject-progress {
+            width: 100%;
+            height: 20px;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background-color: lightcoral;
+            border-radius: 10px;
+            transition: width 0.5s ease-in-out;
+        }
+        
+        .subject-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .subject-stat-card {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid black;
+            text-align: center;
+        }
+        
+        .subject-stat-title {
+            font-family: 'Habibi', serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        
+        .subject-stat-value {
+            font-family: 'Lilita One', cursive;
+            font-size: 24px;
+            color: #4a4a80;
+        }
+        
+        .topic-list {
+            margin-top: 20px;
+        }
+        
+        .topic-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .topic-name {
+            font-family: 'Habibi', serif;
+            font-weight: 500;
+        }
+        
+        .topic-status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .topic-badge {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        
+        .completed {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .in-progress {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        
+        .not-started {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .logout-button {
+            background-color: lightcoral;
+            color: black;
+            padding: 8px 15px;
+            border: 2px solid black;
+            border-radius: 8px;
+            font-family: 'Habibi', serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .logout-button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>User Profile</h1>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </div>
+
+    <div class="profile-container">
+        <div class="profile-header">
+            <div class="profile-pic">
+                <img src="assets/user.png" id="profile-image" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h2 id="user-name">Loading...</h2>
+                <div class="profile-details">
+                    <p id="user-email">Email: Loading...</p>
+                    <p id="user-grade">Grade: Loading...</p>
+                    <p id="user-institution">Institution: Loading...</p>
+                    <button class="logout-button" onclick="handleLogout()">Logout</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats-container">
+            <div class="stats-header">Learning Statistics</div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Quiz Attempts</h3>
+                    <div class="stat-value" id="quiz-attempts">0</div>
+                    <div class="stat-details">Total quizzes taken across all subjects</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Average Score</h3>
+                    <div class="stat-value" id="avg-score">0%</div>
+                    <div class="stat-details">Your average quiz performance</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Subjects</h3>
+                    <div class="subjects-list">
+                        <div class="subject-tag favorite" onclick="showSubjectDetails('Mathematics')">Mathematics</div>
+                        <div class="subject-tag" onclick="showSubjectDetails('Physics')">Physics</div>
+                        <div class="subject-tag" onclick="showSubjectDetails('Biology')">Biology</div>
+                        <div class="subject-tag" onclick="showSubjectDetails('English')">English</div>
+                        <div class="subject-tag" onclick="showSubjectDetails('Chemistry')">Chemistry</div>
+                        <div class="subject-tag" onclick="showSubjectDetails('History')">History</div>
+                    </div>
+                    <div class="stat-details">Click on a subject to see detailed statistics</div>
+                </div>
+                
+                <div class="stat-card">
+                    <h3>Videos Watched</h3>
+                    <div class="stat-value" id="videos-watched">0</div>
+                    <div class="stat-details">Educational videos completed</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="subject-details-container" class="subject-details-container" style="display: none;">
+            <div class="subject-header">
+                <div class="subject-title" id="subject-title">Subject Details</div>
+                <div id="subject-completion">0% Complete</div>
+            </div>
+            
+            <div class="subject-progress">
+                <div class="progress-bar" id="subject-progress-bar" style="width: 0%;"></div>
+            </div>
+            
+            <div class="subject-stats-grid">
+                <div class="subject-stat-card">
+                    <div class="subject-stat-title">Average Score</div>
+                    <div class="subject-stat-value" id="subject-avg-score">0%</div>
+                </div>
+                
+                <div class="subject-stat-card">
+                    <div class="subject-stat-title">Time Spent</div>
+                    <div class="subject-stat-value" id="subject-time-spent">0h</div>
+                </div>
+                
+                <div class="subject-stat-card">
+                    <div class="subject-stat-title">Quizzes Completed</div>
+                    <div class="subject-stat-value" id="subject-quizzes">0/0</div>
+                </div>
+            </div>
+            
+            <h3 style="font-family: 'Lilita One', cursive; margin-top: 30px;">Topics Overview</h3>
+            
+            <div class="topic-list" id="topic-list">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            if (!currentUser) {
+                window.location.href = 'login.html?redirect=profile.html';
+                return;
+            }
+            
+            loadUserProfile(currentUser);
+        });
+        
+        function loadUserProfile(username) {
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const user = users.find(u => u.username === username);
+            
+            if (user) {
+                document.getElementById('user-name').textContent = user["full-name"] || username;
+                document.getElementById('user-email').textContent = 'Email: ' + (user.email || 'Not provided');
+                document.getElementById('user-grade').textContent = 'Grade: ' + (user.grade || 'Not provided');
+                document.getElementById('user-institution').textContent = 'Institution: ' + (user.institution || 'Not provided');
+                
+                loadUserStatistics(username);
+            } else {
+                console.error('User data not found');
+            }
+        }
+        
+        const subjectDetails = {
+            Mathematics: {
+                completion: 75,
+                avgScore: 82,
+                timeSpent: '12.5h',
+                quizzes: '15/20',
+                topics: [
+                    { name: 'Algebra', status: 'completed' },
+                    { name: 'Geometry', status: 'completed' },
+                    { name: 'Calculus', status: 'in-progress' },
+                    { name: 'Statistics', status: 'not-started' },
+                    { name: 'Probability', status: 'completed' }
+                ]
+            },
+            Physics: {
+                completion: 45,
+                avgScore: 78,
+                timeSpent: '8.2h',
+                quizzes: '7/15',
+                topics: [
+                    { name: 'Mechanics', status: 'completed' },
+                    { name: 'Electromagnetism', status: 'in-progress' },
+                    { name: 'Thermodynamics', status: 'not-started' },
+                    { name: 'Optics', status: 'not-started' }
+                ]
+            },
+            Biology: {
+                completion: 60,
+                avgScore: 85,
+                timeSpent: '9.5h',
+                quizzes: '12/20',
+                topics: [
+                    { name: 'Cell Biology', status: 'completed' },
+                    { name: 'Genetics', status: 'completed' },
+                    { name: 'Ecology', status: 'in-progress' },
+                    { name: 'Human Physiology', status: 'in-progress' }
+                ]
+            },
+            Chemistry: {
+                completion: 30,
+                avgScore: 72,
+                timeSpent: '5.8h',
+                quizzes: '6/20',
+                topics: [
+                    { name: 'Periodic Table', status: 'completed' },
+                    { name: 'Chemical Bonding', status: 'in-progress' },
+                    { name: 'Acids and Bases', status: 'not-started' },
+                    { name: 'Organic Chemistry', status: 'not-started' }
+                ]
+            },
+            History: {
+                completion: 15,
+                avgScore: 68,
+                timeSpent: '3.5h',
+                quizzes: '3/20',
+                topics: [
+                    { name: 'Ancient Civilizations', status: 'in-progress' },
+                    { name: 'Medieval Period', status: 'not-started' },
+                    { name: 'Modern History', status: 'not-started' }
+                ]
+            },
+            English: {
+                completion: 50,
+                avgScore: 88,
+                timeSpent: '7.0h',
+                quizzes: '10/20',
+                topics: [
+                    { name: 'Grammar', status: 'completed' },
+                    { name: 'Literature', status: 'in-progress' },
+                    { name: 'Writing', status: 'completed' },
+                    { name: 'Comprehension', status: 'in-progress' }
+                ]
+            }
+        };
+        
+        function showSubjectDetails(subject) {
+            const data = subjectDetails[subject];
+            
+            if (!data) {
+                console.error('Subject data not found for:', subject);
+                return;
+            }
+            
+            document.querySelectorAll('.subject-tag').forEach(tag => {
+                tag.classList.remove('active-subject');
+                if (tag.textContent === subject) {
+                    tag.classList.add('active-subject');
+                }
+            });
+            
+            document.getElementById('subject-title').textContent = subject;
+            document.getElementById('subject-completion').textContent = `${data.completion}% Complete`;
+            document.getElementById('subject-progress-bar').style.width = `${data.completion}%`;
+            document.getElementById('subject-avg-score').textContent = `${data.avgScore}%`;
+            document.getElementById('subject-time-spent').textContent = data.timeSpent;
+            document.getElementById('subject-quizzes').textContent = data.quizzes;
+            
+            const topicList = document.getElementById('topic-list');
+            topicList.innerHTML = '';
+            
+            data.topics.forEach(topic => {
+                const topicItem = document.createElement('div');
+                topicItem.className = 'topic-item';
+                
+                let statusClass = '';
+                switch(topic.status) {
+                    case 'completed': statusClass = 'completed'; break;
+                    case 'in-progress': statusClass = 'in-progress'; break;
+                    case 'not-started': statusClass = 'not-started'; break;
+                }
+                
+                topicItem.innerHTML = `
+                    <div class="topic-name">${topic.name}</div>
+                    <div class="topic-status">
+                        <span class="topic-badge ${statusClass}">${topic.status}</span>
+                    </div>
+                `;
+                
+                topicList.appendChild(topicItem);
+            });
+            
+            document.getElementById('subject-details-container').style.display = 'block';
+        }
+        
+        function loadUserStatistics(username) {
+            
+            const userStats = JSON.parse(localStorage.getItem('userStats_' + username) || '{}');
+            
+            if (Object.keys(userStats).length === 0) {
+                const sampleStats = {
+                    quizAttempts: Math.floor(Math.random() * 15) + 1,
+                    avgScore: Math.floor(Math.random() * 40) + 60, 
+                    videosWatched: Math.floor(Math.random() * 30) + 5,
+                    favoriteSubject: ['Mathematics', 'Physics', 'Biology', 'English'][Math.floor(Math.random() * 4)]
+                };
+                
+                localStorage.setItem('userStats_' + username, JSON.stringify(sampleStats));
+                
+                document.getElementById('quiz-attempts').textContent = sampleStats.quizAttempts;
+                document.getElementById('avg-score').textContent = sampleStats.avgScore + '%';
+                document.getElementById('videos-watched').textContent = sampleStats.videosWatched;
+                
+                const subjectTags = document.querySelectorAll('.subject-tag');
+                subjectTags.forEach(tag => {
+                    tag.classList.remove('favorite');
+                    if (tag.textContent === sampleStats.favoriteSubject) {
+                        tag.classList.add('favorite');
+                    }
+                });
+                
+                showSubjectDetails(sampleStats.favoriteSubject);
+            } else {
+                document.getElementById('quiz-attempts').textContent = userStats.quizAttempts || 0;
+                document.getElementById('avg-score').textContent = (userStats.avgScore || 0) + '%';
+                document.getElementById('videos-watched').textContent = userStats.videosWatched || 0;
+                
+                const subjectTags = document.querySelectorAll('.subject-tag');
+                subjectTags.forEach(tag => {
+                    tag.classList.remove('favorite');
+                    if (tag.textContent === userStats.favoriteSubject) {
+                        tag.classList.add('favorite');
+                    }
+                });
+                
+                showSubjectDetails(userStats.favoriteSubject);
+            }
+        }
+    </script>
+</body>
+</html>

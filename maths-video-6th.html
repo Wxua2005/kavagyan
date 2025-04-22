@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Habibi&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+        <script src="auth.js"></script>
         <title>Maths Videos</title>
         <style>
             body {
@@ -18,8 +19,8 @@
             }
 
             .button-class {
-                width: 130px; /* Reduced from 200px */
-                height: 40px; /* Added fixed height */
+                width: 130px; 
+                height: 40px; 
                 background-color: lightcoral;
                 transition: all 0.3s ease;
                 cursor: pointer;
@@ -47,8 +48,8 @@
                 border: 3px black solid;
                 display: flex;
                 align-items: center;
-                margin: 10px 0; /* Reduced from 20px */
-                gap: 20px; /* Added gap between chapter number and name */
+                margin: 10px 0; 
+                gap: 20px; 
             }
 
             .chapter-title, .chapter-name {
@@ -63,16 +64,16 @@
                 grid-template-columns: repeat(4, 1fr);
                 gap: 20px;
                 padding: 20px;
-                margin-bottom: 30px; /* Added space between video grid and next chapter */
+                margin-bottom: 30px; 
             }
 
             .video-box {
-                width: 250px; /* Reduced from 329px */
-                height: 180px; /* Reduced from 162px */
-                background: #808080; /* Changed to gray */
+                width: 250px; 
+                height: 180px;
+                background: #808080;
                 border-radius: 18px;
                 border: 4px solid black;
-                overflow: hidden; /* Add this to keep iframe within borders */
+                overflow: hidden; 
             }
 
             .video-box iframe {
@@ -84,17 +85,18 @@
     </head>
 
     <body>
-        <!-- Header with Home button and user icon -->
         <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
             <a href="index.html" style="text-decoration: none; color: inherit;">
                 <div class="button-class">Home</div>
             </a>
-            <img src="assets/user.png" alt="user" width="50" height="50">
+            <div id="user-section">
+                <a href="profile.html" style="text-decoration: none;">
+                    <img src="assets/user.png" alt="user" width="50" height="50" style="cursor: pointer; transition: transform 0.3s ease;">
+                </a>
+            </div>
         </div>
 
-        <!-- Content container -->
         <div style="max-width: 1200px; margin: 0 auto;">
-            <!-- Chapter 1 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 1 :</div>
                 <div class="chapter-name">Knowing Our Numbers</div>
@@ -134,7 +136,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 2 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 2 :</div>
                 <div class="chapter-name">Whole Numbers</div>
@@ -174,7 +175,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 3 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 3 :</div>
                 <div class="chapter-name">Playing With Numbers</div>
@@ -214,7 +214,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 4 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 4 :</div>
                 <div class="chapter-name">Basic Geometrical Ideas</div>
@@ -224,7 +223,7 @@
                     <iframe 
                         src="https://www.youtube.com/embed/k6f89zlWKJs" 
                         title="Mathematics Chapter 4 Part 1"
-                        allow="accel</div>erometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
                     </iframe>
                 </div>
@@ -254,7 +253,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 5 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 5 :</div>
                 <div class="chapter-name">Understanding Elemental Shapes</div>
@@ -294,7 +292,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 6 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 6 :</div>
                 <div class="chapter-name">Integers</div>
@@ -334,7 +331,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 7 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 7 :</div>
                 <div class="chapter-name">Fractions</div>
@@ -374,7 +370,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 8 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 8 :</div>
                 <div class="chapter-name">Decimals</div>
@@ -414,7 +409,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 9 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 9 :</div>
                 <div class="chapter-name">Data Handling</div>
@@ -454,7 +448,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 10 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 10 :</div>
                 <div class="chapter-name">Mensuration</div>
@@ -494,7 +487,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 11 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 11 :</div>
                 <div class="chapter-name">Algebra</div>
@@ -534,7 +526,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 12 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 12 :</div>
                 <div class="chapter-name">Ratio and Proportion</div>
@@ -574,7 +565,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 13 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 13 :</div>
                 <div class="chapter-name">Introduction to Symmetry</div>
@@ -614,7 +604,6 @@
                 </div>
             </div>
 
-            <!-- Chapter 14 -->
             <div class="chapter-container">
                 <div class="chapter-title">Chapter 14 :</div>
                 <div class="chapter-name">Practical Geometry</div>
@@ -655,4 +644,32 @@
             </div>
         </div>
     </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoIframes = document.querySelectorAll('iframe');
+            videoIframes.forEach(iframe => {
+                iframe.addEventListener('click', function() {
+                    incrementVideoCount();
+                });
+            });
+            
+            const wasReferred = document.referrer.includes('index.html') || 
+                               document.referrer.includes('maths.html');
+            if (wasReferred) {
+                incrementVideoCount();
+            }
+        });
+        
+        function incrementVideoCount() {
+            const currentUser = sessionStorage.getItem('currentUser');
+            if (!currentUser) return; 
+            
+            const userStats = JSON.parse(localStorage.getItem('userStats_' + currentUser) || '{}');
+            
+            userStats.videosWatched = (userStats.videosWatched || 0) + 1;
+            
+            localStorage.setItem('userStats_' + currentUser, JSON.stringify(userStats));
+            console.log('Video count updated for user:', currentUser);
+        }
+    </script>
 </html>

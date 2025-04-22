@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Naren Medarametla">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Habibi&family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>About Us - Kavagyan</title>
+    <script src="script.js"></script>
+    <style>
+        body {
+            background-color: #D1D5C9;
+            margin: 0;
+            padding: 0;
+            font-family: 'Habibi', serif;
+        }
+        
+        .about-header {
+            background-color: #fff3e8;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .about-header h1 {
+            font-family: 'Rubik Doodle Shadow', cursive;
+            font-size: 60px;
+            margin: 0;
+        }
+        
+        .about-header .back-button {
+            margin-top: 20px;
+        }
+        
+        .team-section, .mission-section, .vision-section, .history-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff4bd;
+            border-radius: 15px;
+            border: 3px solid black;
+        }
+        
+        .section-title {
+            font-family: 'Rubik Doodle Shadow', cursive;
+            font-size: 40px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .team-member {
+            background-color: #fff3e8;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid lightcoral;
+        }
+        
+        .team-member h3 {
+            font-family: 'Lilita One', sans-serif;
+            margin: 10px 0;
+        }
+        
+        .team-member p {
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .content-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            background-color: rgb(144, 144, 205);
+            padding: 10px 20px;
+            color: black;
+            text-decoration: none;
+            border-radius: 12px;
+            font-family: 'Habibi', serif;
+            border: 3px solid black;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        
+        .back-button:hover {
+            transform: scale(1.05);
+        }
+        
+        .highlight {
+            color: lightcoral;
+            font-weight: bold;
+        }
+        
+        .contact-info {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff3e8;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="about-header">
+        <h1>About Kavagyan</h1>
+        <a href="index.html" class="back-button">Back to Home</a>
+    </header>
+    
+    <div class="mission-section">
+        <h2 class="section-title">Our Mission</h2>
+        <p class="content-text">
+            At Kavagyan, our mission is to democratize education by providing accessible, high-quality learning resources to students across India. We believe that every child deserves access to excellent educational content regardless of their geographic location or socioeconomic background. Our platform is designed to supplement traditional classroom learning with engaging videos, quizzes, and interactive content that make learning enjoyable and effective.
+        </p>
+        <p class="content-text">
+            We are particularly focused on helping students prepare for important exams like JEE and NEET, while also providing strong foundational knowledge across all grade levels from 6th to 12th standard. Our <span class="highlight">commitment to educational excellence</span> drives everything we do.
+        </p>
+    </div>
+    
+    <div class="vision-section">
+        <h2 class="section-title">Our Vision</h2>
+        <p class="content-text">
+            We envision a future where quality education is accessible to every student in India, breaking down barriers to learning and empowering the next generation of leaders, thinkers, and innovators. By 2030, we aim to reach 10 million students across the country with our educational resources, with special focus on making advanced education accessible to students in rural and underprivileged areas.
+        </p>
+        <p class="content-text">
+            Kavagyan strives to be recognized as the premier destination for South Indian students seeking supplementary educational materials that are culturally relevant, linguistically accessible, and academically rigorous.
+        </p>
+    </div>
+    
+    <div class="history-section">
+        <h2 class="section-title">Our Journey</h2>
+        <p class="content-text">
+            Kavagyan began as a small initiative in 2022 when three passionate educators recognized the need for more engaging and accessible educational content. Starting with just mathematics videos for middle school students, our platform quickly grew as more students discovered the value of our approach to learning.
+        </p>
+        <p class="content-text">
+            Within a year, we expanded our team to include specialists across various subjects and technical experts who could help us build a more robust learning platform. Today, we are proud to offer comprehensive resources across mathematics, physics, biology, and English, with plans to add more subjects in the near future.
+        </p>
+        <p class="content-text">
+            Our journey has been guided by feedback from students, parents, and educators who continue to help us refine and improve our offerings. We remain committed to evolving our platform to meet the changing needs of learners in the digital age.
+        </p>
+    </div>
+    
+    <div class="team-section">
+        <h2 class="section-title">Our Team</h2>
+        <p class="content-text">
+            Behind Kavagyan is a dedicated team of educators, content creators, and technology specialists who share a passion for transforming education. Our diverse backgrounds and expertise allow us to approach educational challenges from multiple perspectives, resulting in a more comprehensive and effective learning platform.
+        </p>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="assets/user.png" alt="Team Member">
+                <h3>Dr. Arun Kumar</h3>
+                <p>Co-founder & Mathematics Expert</p>
+                <p>Ph.D. in Mathematics from IIT Madras</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="assets/user.png" alt="Team Member">
+                <h3>Prof. Lakshmi Rao</h3>
+                <p>Co-founder & Science Director</p>
+                <p>20+ years teaching experience at top institutions</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="assets/user.png" alt="Team Member">
+                <h3>Vijay Sharma</h3>
+                <p>Co-founder & Technology Lead</p>
+                <p>Former Senior Developer at EdTech startups</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="assets/user.png" alt="Team Member">
+                <h3>Dr. Meena Iyer</h3>
+                <p>Biology Content Lead</p>
+                <p>NEET mentor with 15+ years experience</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="assets/user.png" alt="Team Member">
+                <h3>Prof. Ravi Chandran</h3>
+                <p>Physics Expert</p>
+                <p>Author of bestselling Physics textbooks</p>
+            </div>
+            
+            <div class="team-member">
+                <img src="assets/user.png" alt="Team Member">
+                <h3>Anjali Menon</h3>
+                <p>English Language Specialist</p>
+                <p>Cambridge CELTA certified educator</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contact-info">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="content-text">
+            We'd love to hear from you! Whether you have questions, feedback, or suggestions, our team is here to help.
+        </p>
+        <p class="content-text">
+            Email: <span class="highlight">info@kavagyan.com</span><br>
+            Phone: <span class="highlight">+91-9876543210</span><br>
+            Address: Kavagyan Educational Foundation, 123 Learning Street, Bangalore - 560001, Karnataka, India
+        </p>
+    </div>
+    
+    <div style="width: auto; height: 200px; background-color: #f7e8c5; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;">
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 440px;">
+           <a href="https://www.linkedin.com/in/naren-medarametla-81a36628b/"><img src="assets/linkedin.png" alt="linkedin" width="70" height="70"></a>
+            <img src="assets/instagram.png" alt="instagram" width="120" height="120">
+            <img src="assets/facebook.png" alt="facebook" width="70" height="70">
+        </div>
+        <div style="display: flex; flex-direction: row; gap: 180px; font-family: 'Lilita One'; font-size: 20px; background-color: #EDEDE9; padding-left: 128px; padding-right: 180px; padding-bottom: 20px; justify-content: center; padding-top: 20px;">
+            <a href="terms-of-service.html" style="text-decoration: none; color: black;">Terms of Service</a>
+            <a href="privacy-policy.html" style="text-decoration: none; color: black;">Privacy Policy</a>
+            <a href="#" style="text-decoration: none; color: black;">Contact Us</a>
+            <a href="#" style="text-decoration: none; color: black;">Help</a>
+            <a href="#" onclick="showFeedbackForm(); return false;" style="text-decoration: none; color: black;">Feedback</a>
+        </div>
+    </div>
+</body>
+</html>

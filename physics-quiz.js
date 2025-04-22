@@ -1,195 +1,245 @@
 const quizData = {
-    algebra: [
+    mechanics: [
         {
-            question: "Solve for x: 2x + 5 = 15",
+            question: "What is the acceleration due to gravity at Earth's surface? (in m/s²)",
             type: "numerical",
-            answer: 5,
-            explanation: "Subtract 5 from both sides: 2x = 10, then divide by 2: x = 5"
+            answer: 9.8,
+            explanation: "The acceleration due to gravity at Earth's surface is approximately 9.8 m/s²."
         },
         {
-            question: "Which of these is a quadratic equation?",
+            question: "Which of Newton's laws states that for every action, there is an equal and opposite reaction?",
             type: "multiple-choice",
             options: [
-                "y = 3x + 2",
-                "y = x² + 3x + 2",
-                "y = 4/x",
-                "y = 2ˣ"
-            ],
-            correctIndex: 1,
-            explanation: "A quadratic equation contains x²"
-        },
-        {
-            question: "Factorize: x² - 9",
-            type: "multiple-choice",
-            options: [
-                "(x-3)(x+3)",
-                "(x-9)(x+1)",
-                "(x-4.5)(x-4.5)",
-                "This expression cannot be factorized"
-            ],
-            correctIndex: 0,
-            explanation: "x² - 9 = x² - 3² = (x-3)(x+3)"
-        },
-        {
-            question: "If 3x - 7 = 20, what is the value of x?",
-            type: "numerical",
-            answer: 9,
-            explanation: "3x - 7 = 20, so 3x = 27, and x = 9"
-        },
-        {
-            question: "Solve the inequality: 2x - 3 > 7",
-            type: "numerical",
-            answer: 5,
-            explanation: "2x - 3 > 7, so 2x > 10, and x > 5. The smallest integer value is 5."
-        }
-    ],
-    geometry: [
-        {
-            question: "What is the area of a circle with radius 5 units? (Use π = 3.14)",
-            type: "numerical",
-            answer: 78.5,
-            explanation: "Area = πr² = 3.14 × 5² = 3.14 × 25 = 78.5 square units"
-        },
-        {
-            question: "In a right triangle, if one angle is 30°, what is another angle?",
-            type: "multiple-choice",
-            options: [
-                "30°",
-                "45°",
-                "60°",
-                "90°"
-            ],
-            correctIndex: 3,
-            explanation: "In a right triangle, one angle is 90°. The third angle is 60° (since angles sum to 180°)"
-        },
-        {
-            question: "What is the perimeter of a rectangle with length 8 units and width 5 units?",
-            type: "numerical",
-            answer: 26,
-            explanation: "Perimeter = 2(length + width) = 2(8 + 5) = 2(13) = 26 units"
-        },
-        {
-            question: "Which of these shapes has exactly 4 sides of equal length?",
-            type: "multiple-choice",
-            options: [
-                "Rectangle",
-                "Rhombus",
-                "Trapezoid",
-                "Pentagon"
-            ],
-            correctIndex: 1,
-            explanation: "A rhombus has 4 sides of equal length"
-        },
-        {
-            question: "What is the volume of a cube with side length 4 units?",
-            type: "numerical",
-            answer: 64,
-            explanation: "Volume = side³ = 4³ = 64 cubic units"
-        }
-    ],
-    calculus: [
-        {
-            question: "What is the derivative of f(x) = 3x² + 2x?",
-            type: "multiple-choice",
-            options: [
-                "f'(x) = 3x + 2",
-                "f'(x) = 6x + 2",
-                "f'(x) = 6x² + 2",
-                "f'(x) = 6x²"
-            ],
-            correctIndex: 1,
-            explanation: "The derivative of x² is 2x, so f'(x) = 6x + 2"
-        },
-        {
-            question: "What is the integral of f(x) = 2x?",
-            type: "multiple-choice",
-            options: [
-                "F(x) = x² + C",
-                "F(x) = 2x² + C",
-                "F(x) = x² + 2 + C",
-                "F(x) = 2x³/3 + C"
-            ],
-            correctIndex: 0,
-            explanation: "The integral of 2x is x² + C, where C is a constant"
-        },
-        {
-            question: "If f'(x) = 3x² and f(0) = 5, what is f(2)?",
-            type: "numerical",
-            answer: 13,
-            explanation: "f(x) = x³ + 5, so f(2) = 2³ + 5 = 8 + 5 = 13"
-        },
-        {
-            question: "What is the limit of (x² - 1)/(x - 1) as x approaches 1?",
-            type: "numerical",
-            answer: 2,
-            explanation: "Using L'Hôpital's rule or factoring: lim (x+1)(x-1)/(x-1) = lim(x+1) = 2"
-        },
-        {
-            question: "What is the second derivative of f(x) = x³ - 2x² + 3x?",
-            type: "multiple-choice",
-            options: [
-                "f''(x) = 6x - 4",
-                "f''(x) = 6x - 2",
-                "f''(x) = 6x - 4x + 3",
-                "f''(x) = 6"
-            ],
-            correctIndex: 0,
-            explanation: "f'(x) = 3x² - 4x + 3, and f''(x) = 6x - 4"
-        }
-    ],
-    statistics: [
-        {
-            question: "What is the mean of the numbers 3, 7, 8, 10, 12?",
-            type: "numerical",
-            answer: 8,
-            explanation: "Mean = (3+7+8+10+12)/5 = 40/5 = 8"
-        },
-        {
-            question: "What is the median of the numbers 5, 8, 2, 9, 11?",
-            type: "numerical",
-            answer: 8,
-            explanation: "Sorted: 2, 5, 8, 9, 11. The middle value is 8."
-        },
-        {
-            question: "What is the probability of rolling a 6 on a standard die?",
-            type: "multiple-choice",
-            options: [
-                "1/12",
-                "1/6",
-                "1/3",
-                "1/2"
-            ],
-            correctIndex: 1,
-            explanation: "There is 1 favorable outcome out of 6 possible outcomes, so probability = 1/6"
-        },
-        {
-            question: "If the standard deviation of a dataset is 0, what does this indicate?",
-            type: "multiple-choice",
-            options: [
-                "The dataset contains only negative numbers",
-                "The dataset contains only positive numbers",
-                "All values in the dataset are the same",
-                "The dataset contains an equal number of positive and negative values"
+                "First law",
+                "Second law",
+                "Third law",
+                "Law of conservation of momentum"
             ],
             correctIndex: 2,
-            explanation: "If standard deviation is 0, all values in the dataset are identical"
+            explanation: "Newton's Third Law states that for every action, there is an equal and opposite reaction."
         },
         {
-            question: "In a normal distribution, what percentage of data falls within one standard deviation of the mean?",
+            question: "A 2kg object experiences a force of 10N. What is its acceleration? (in m/s²)",
+            type: "numerical",
+            answer: 5,
+            explanation: "Using F = ma, a = F/m = 10N / 2kg = 5 m/s²"
+        },
+        {
+            question: "What is the SI unit of work?",
             type: "multiple-choice",
             options: [
-                "50%",
-                "68%",
-                "95%",
-                "99.7%"
+                "Newton",
+                "Joule",
+                "Watt",
+                "Pascal"
             ],
             correctIndex: 1,
-            explanation: "In a normal distribution, approximately 68% of data falls within one standard deviation"
+            explanation: "The SI unit of work is the Joule, which equals one newton-meter."
+        },
+        {
+            question: "If a car accelerates from 0 to 25 m/s in 5 seconds, what is its average acceleration? (in m/s²)",
+            type: "numerical",
+            answer: 5,
+            explanation: "Average acceleration = change in velocity / time = 25 m/s / 5 s = 5 m/s²"
+        }
+    ],
+    electricity: [
+        {
+            question: "What is Ohm's Law?",
+            type: "multiple-choice",
+            options: [
+                "V = IR",
+                "P = IV",
+                "I = PV",
+                "R = P/I²"
+            ],
+            correctIndex: 0,
+            explanation: "Ohm's Law states that voltage equals current multiplied by resistance (V = IR)."
+        },
+        {
+            question: "What is the resistance of a circuit with a current of 2A and a voltage of 12V? (in ohms)",
+            type: "numerical",
+            answer: 6,
+            explanation: "Using Ohm's Law (V = IR), R = V/I = 12V / 2A = 6 ohms"
+        },
+        {
+            question: "Which particle carries a negative charge?",
+            type: "multiple-choice",
+            options: [
+                "Proton",
+                "Neutron",
+                "Electron",
+                "Positron"
+            ],
+            correctIndex: 2,
+            explanation: "Electrons carry a negative charge (-1.602 × 10^-19 coulombs)."
+        },
+        {
+            question: "What is the power in a circuit with a voltage of 120V and a current of 5A? (in watts)",
+            type: "numerical",
+            answer: 600,
+            explanation: "Power = Voltage × Current = 120V × 5A = 600 watts"
+        },
+        {
+            question: "Which of these materials is the best electrical conductor?",
+            type: "multiple-choice",
+            options: [
+                "Wood",
+                "Rubber",
+                "Silver",
+                "Glass"
+            ],
+            correctIndex: 2,
+            explanation: "Silver has the highest electrical conductivity of all metals."
+        }
+    ],
+    optics: [
+        {
+            question: "What is the speed of light in a vacuum? (in m/s)",
+            type: "numerical",
+            answer: 299792458,
+            explanation: "The speed of light in a vacuum is approximately 3 × 10^8 m/s or precisely 299,792,458 m/s."
+        },
+        {
+            question: "Which phenomenon explains how light bends when passing from one medium to another?",
+            type: "multiple-choice",
+            options: [
+                "Diffraction",
+                "Refraction",
+                "Reflection",
+                "Dispersion"
+            ],
+            correctIndex: 1,
+            explanation: "Refraction is the bending of light when it passes from one medium to another."
+        },
+        {
+            question: "Which color of visible light has the longest wavelength?",
+            type: "multiple-choice",
+            options: [
+                "Violet",
+                "Green",
+                "Yellow",
+                "Red"
+            ],
+            correctIndex: 3,
+            explanation: "Red light has the longest wavelength in the visible spectrum."
+        },
+        {
+            question: "If an object is placed 10 cm from a converging lens with a focal length of 5 cm, how far from the lens is the image formed? (in cm)",
+            type: "numerical",
+            answer: 10,
+            explanation: "Using the lens equation (1/f = 1/do + 1/di), where f = 5 cm, do = 10 cm: 1/5 = 1/10 + 1/di, which gives di = 10 cm."
+        },
+        {
+            question: "Which of these is NOT a type of lens?",
+            type: "multiple-choice",
+            options: [
+                "Convex",
+                "Concave",
+                "Rectangular",
+                "Plano-convex"
+            ],
+            correctIndex: 2,
+            explanation: "Rectangular is not a type of lens. Lenses are typically described by their curvature, not their shape."
+        }
+    ],
+    modern: [
+        {
+            question: "What is the rest mass energy of an electron? (in MeV)",
+            type: "numerical",
+            answer: 0.511,
+            explanation: "The rest mass energy of an electron is approximately 0.511 MeV."
+        },
+        {
+            question: "Which equation represents Einstein's mass-energy equivalence?",
+            type: "multiple-choice",
+            options: [
+                "E = mc",
+                "E = mc²",
+                "E = m/c²",
+                "E = m²c"
+            ],
+            correctIndex: 1,
+            explanation: "Einstein's mass-energy equivalence is represented by E = mc², where c is the speed of light."
+        },
+        {
+            question: "What is the de Broglie wavelength of a 1 kg object moving at 1 m/s? (in meters, use h=6.63×10^-34 J·s)",
+            type: "multiple-choice",
+            options: [
+                "6.63 × 10^-34 m",
+                "6.63 × 10^-35 m",
+                "6.63 × 10^-36 m",
+                "6.63 × 10^-33 m"
+            ],
+            correctIndex: 0,
+            explanation: "Using λ = h/mv = (6.63×10^-34)/(1×1) = 6.63×10^-34 m"
+        },
+        {
+            question: "Which particle was predicted by Paul Dirac and is the antiparticle of the electron?",
+            type: "multiple-choice",
+            options: [
+                "Proton",
+                "Positron",
+                "Neutron",
+                "Neutrino"
+            ],
+            correctIndex: 1,
+            explanation: "The positron is the antiparticle of the electron, with identical mass but opposite charge."
+        },
+        {
+            question: "What is the energy of a photon with a wavelength of 500 nm? (in eV, use h=4.14×10^-15 eV·s, c=3×10^8 m/s)",
+            type: "numerical",
+            answer: 2.48,
+            explanation: "E = hc/λ = (4.14×10^-15 × 3×10^8)/(500×10^-9) = 2.48 eV"
+        }
+    ],
+    thermodynamics: [
+        {
+            question: "What is absolute zero temperature in degrees Celsius?",
+            type: "numerical",
+            answer: -273.15,
+            explanation: "Absolute zero is -273.15°C (or 0 Kelvin)."
+        },
+        {
+            question: "Which law of thermodynamics states that energy cannot be created or destroyed?",
+            type: "multiple-choice",
+            options: [
+                "Zeroth law",
+                "First law",
+                "Second law",
+                "Third law"
+            ],
+            correctIndex: 1,
+            explanation: "The First Law of Thermodynamics states that energy cannot be created or destroyed, only transformed."
+        },
+        {
+            question: "If a gas performs 500 J of work and loses 200 J of heat, what is the change in its internal energy? (in J)",
+            type: "numerical",
+            answer: -700,
+            explanation: "Using ΔU = Q - W, where Q = -200 J and W = 500 J: ΔU = -200 - 500 = -700 J"
+        },
+        {
+            question: "Which equation represents the ideal gas law?",
+            type: "multiple-choice",
+            options: [
+                "PV = nR",
+                "PV = nRT",
+                "P = nRT",
+                "PV = RT"
+            ],
+            correctIndex: 1,
+            explanation: "The ideal gas law is PV = nRT, where P is pressure, V is volume, n is the number of moles, R is the gas constant, and T is temperature."
+        },
+        {
+            question: "What is the specific heat capacity of water? (in J/g·°C)",
+            type: "numerical",
+            answer: 4.18,
+            explanation: "The specific heat capacity of water is approximately 4.18 J/g·°C."
         }
     ]
 };
 
-let currentTopic = 'algebra';
+let currentTopic = 'mechanics';
 let currentQuestions = [];
 let currentQuestionIndex = 0;
 let score = 0;
@@ -213,8 +263,6 @@ const quizComplete = document.getElementById('quiz-complete');
 const finalScore = document.getElementById('final-score');
 const finalTotal = document.getElementById('final-total');
 const scoreMessage = document.getElementById('score-message');
-const retryButton = document.getElementById('retry-quiz');
-const changeTopicButton = document.getElementById('change-topic');
 
 function initQuiz() {
     userAnswers = [];
@@ -222,7 +270,7 @@ function initQuiz() {
     currentQuestions = [...quizData[currentTopic]];
     
     shuffleArray(currentQuestions);
-
+    
     currentQuestionIndex = 0;
     score = 0;
     
@@ -238,6 +286,11 @@ function shuffleArray(array) {
     }
 }
 
+function changePhysicsTopic() {
+    currentTopic = document.getElementById('topic').value;
+    initQuiz();
+}
+
 function showQuestion() {
     const question = currentQuestions[currentQuestionIndex];
     
@@ -251,7 +304,6 @@ function showQuestion() {
         
         setTimeout(() => {
             updateQuestionContent(question);
-            
             card.classList.remove('slide-out-deck');
             card.classList.add('slide-in-deck');
             card.classList.add('show');
@@ -334,7 +386,7 @@ submitNumerical.addEventListener('click', () => {
         return;
     }
     
-    const isCorrect = Math.abs(userAnswer - question.answer) < 0.01; 
+    const isCorrect = Math.abs(userAnswer - question.answer) < 0.01;
     
     userAnswers.push({
         questionIndex: currentQuestionIndex,
@@ -404,61 +456,17 @@ function showQuizCompleteScreen() {
     
     const percentage = (score / currentQuestions.length) * 100;
     if (percentage >= 90) {
-        scoreMessage.textContent = "Outstanding work! You're a math genius!";
+        scoreMessage.textContent = "Outstanding work! You're a physics genius!";
     } else if (percentage >= 70) {
-        scoreMessage.textContent = "Great job! You have a solid understanding!";
+        scoreMessage.textContent = "Great job! You have a solid understanding of physics!";
     } else if (percentage >= 50) {
-        scoreMessage.textContent = "Good effort! Keep practicing!";
+        scoreMessage.textContent = "Good effort! Keep practicing your physics knowledge!";
     } else {
-        scoreMessage.textContent = "Keep studying! You'll get better with practice.";
+        scoreMessage.textContent = "Keep studying! You'll improve your physics understanding with practice.";
     }
-    
-    saveQuizStatistics(score, currentQuestions.length, currentTopic);
     
     generateQuizReport();
-    
     quizComplete.classList.add('show');
-}
-
-function saveQuizStatistics(score, total, topic) {
-    const currentUser = sessionStorage.getItem('currentUser');
-    if (!currentUser) return; 
-    
-    const userStats = JSON.parse(localStorage.getItem('userStats_' + currentUser) || '{}');
-    
-    userStats.quizAttempts = (userStats.quizAttempts || 0) + 1;
-    
-    const oldScores = userStats.totalScore || 0;
-    const oldAttempts = userStats.quizAttempts - 1;
-    const newTotalScore = oldScores + (score / total * 100);
-    userStats.totalScore = newTotalScore;
-    userStats.avgScore = Math.round(newTotalScore / userStats.quizAttempts);
-    
-    if (!userStats.subjectCounts) {
-        userStats.subjectCounts = {};
-    }
-    userStats.subjectCounts[topic] = (userStats.subjectCounts[topic] || 0) + 1;
-    
-    let maxCount = 0;
-    let favoriteSubject = '';
-    for (const subject in userStats.subjectCounts) {
-        if (userStats.subjectCounts[subject] > maxCount) {
-            maxCount = userStats.subjectCounts[subject];
-            favoriteSubject = subject;
-        }
-    }
-    
-    const subjectMap = {
-        'algebra': 'Mathematics',
-        'geometry': 'Mathematics',
-        'calculus': 'Mathematics',
-        'statistics': 'Mathematics'
-    };
-    
-    userStats.favoriteSubject = subjectMap[favoriteSubject] || 'Mathematics';
-    
-    localStorage.setItem('userStats_' + currentUser, JSON.stringify(userStats));
-    console.log('Quiz statistics saved for user:', currentUser);
 }
 
 function generateQuizReport() {
@@ -507,6 +515,7 @@ function generateQuizReport() {
     });
 }
 
+// Show answers review
 function showAnswersReview() {
     const answersReview = document.getElementById('answers-review');
     const questionList = document.getElementById('question-list');
@@ -554,16 +563,6 @@ function showAnswersReview() {
         answersReview.style.display = 'none';
         reviewButton.textContent = 'Review Answers';
     }
-}
-
-changeTopicButton.addEventListener('click', () => {
-    quizComplete.classList.remove('show');
-    topicSelector.focus();
-});
-
-function changeTopic() {
-    currentTopic = topicSelector.value;
-    initQuiz();
 }
 
 function updateScoreDisplay() {

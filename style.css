@@ -3,7 +3,6 @@
     font-weight: 400;
     font-style: normal;
     font-size: 47px;
-    /* text-align: center; */
     padding-top: 15px;
 }
 
@@ -110,7 +109,7 @@ header {
 
 .image-container img {
     border-radius: 68px;
-    display: block; /* Ensures text starts below the image */
+    display: block; 
 }
 
 .image-text {
